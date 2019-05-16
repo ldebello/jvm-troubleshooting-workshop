@@ -1,0 +1,21 @@
+= JVM Troubleshooting Workshop
+
+La idea de este workshop es proveer las herramientas necesarias para analizar los posibles problemas que puedan aparecer en nuestras aplicaciones.
+
+Generalmente estos problemas se pueden asociar a:
+
+* Threading (Slowness, Deadlocks)
+* Memory Usage (Slowness, OOM)
+* Classloader (Weird exception)
+* Garbage Collector (Slowness)
+* JIT Compiler (Slowness)
+
+== Introducción
+
+Se crearon algunos proyectos Java para ir explicando algunos conceptos y ejemplificar los problemas antes mencionados. Lo único necesario es *Docker*, *Oracle JDK/OpenJDK* y *Maven 3.x*.
+
+Módulos:
+
+* link:Concepts/README.adoc[Concepts]
+* link:Tools/README.adoc[Tools]
+* link:Labs/README.adoc[Tools]

@@ -1,0 +1,24 @@
+= Lab 4 - Busy Thread
+
+En este laboratorio veremos como encontrar cual de nuestros thread esta consumiendo el CPU.
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -l 4
+----
+
+2) Listar los procesos Java
+
+[source,bash]
+----
+jps -l
+----
+
+3) Ejecutar jvmtop
+
+[source,bash]
+----
+./tools/jvmtop.sh -p <PID>
+----

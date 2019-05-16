@@ -1,0 +1,61 @@
+= Tools
+
+A la hora de analizar un problema en nuestra aplicación tenemos multiples herramientas y cada una puede brindarnos
+diversa información.
+
+== OS Tools
+
+* Windows
+    ** https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer[Process Explorer]:
+        *** Procesos en ejecución.
+        *** Memory Usage.
+        *** File Descriptors.
+        *** CPU Usage at Thread Level.
+    ** https://docs.microsoft.com/en-us/sysinternals/downloads/vmmap[VMMap]
+
+* Linux
+    ** https://linux.die.net/man/1/top[top]
+        *** Procesos en ejecución.
+        *** Memory Usage.
+        *** CPU Usage at Thread Level.
+    ** https://linux.die.net/man/1/strace[strace]
+        *** Trace system calls and signals
+
+* Mac
+    ** https://ss64.com/osx/top.html[top]
+        *** Procesos en ejecución.
+        *** Memory Usage.
+    ** https://www.unix.com/man-page/osx/1m/dtruss/[dtruss]
+        *** Trace system calls and signals
+    ** https://www.unix.com/man-page/all/1/vmmap/[vmmap]
+        ** Muestra las regiones de la Virtual memory
+
+
+== Java Tools
+
+La JDK ofrece multiples herramientas en su carpeta `bin`
+
+* jcmd: Nos permite enviar comandos de diagnóstico a una JVM.
+* jps: Lista los procesos Java en ejecución.
+* jstat: Recompilar estadísticas del proceso Java.
+* jstack: Generación de Thread Dump.
+* jmap: Generación de Memory Dump.
+* jconsole: Monitoring tool basada en JMX (Java Management Extensions).
+* jinfo: Permite obtener information del proceso Java.
+* jhsdb: Permite unirse al proceso Java, posee multiples módulo (Java 9 onwards).
+* jhat: Heap Analyzer (Removed in JDK 9).
+
+[#AdditionalTools]
+== Additional Tools
+
+Además hay herramientas adicionales que pueden ser de utilidad.
+
+* https://visualvm.github.io/index.html[VisualVM]: Una tool que integra las commandline del JDK y un profiler lightweight.
+* https://builds.shipilev.net/jmc/[JMC]: Similar a VisualVM pero además posee JFR (Java Flight Recorder).
+* https://www.eclipse.org/mat/downloads.php[Memory Analyzer Thread]: Un Heap Analyzer.
+* https://github.com/irockel/tda[TDA]: Thread Dump Analyzer.
+* https://github.com/patric-r/jvmtop[JVMTop]: Command line interface similar a top para procesos Java.
+* https://github.com/chewiebug/GCViewer[GCViewer]: GC Logs Parser.
+* https://github.com/dmart28/gcplot-docker[GCPlot]: GC Log Analyzer.
+* https://github.com/AdoptOpenJDK/jitwatch[JIT Watch]: Permite analizar los logs del JIT Compiler.
+* http://file-leak-detector.kohsuke.org/[File Leak Detector]: Java Agent que mantiene el tracking de donde/cuando/quien abrió un archivo en la JVM.

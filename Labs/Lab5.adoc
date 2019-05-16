@@ -1,0 +1,39 @@
+= Lab 5 - Zombie Process
+
+En este laboratorio veremos como detectar que previene a un java process de terminar.
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -l 5
+----
+
+2) Listar los procesos Java
+
+[source,bash]
+----
+jps -l
+----
+
+3) Obtener un Thread dump antes de presionar enter
+
+[source,bash]
+----
+jstack -l <PID> > thread_dump_before.jstack
+----
+
+4) Obtener un Thread dump luego de presionar enter
+
+[source,bash]
+----
+jstack -l <PID> > thread_dump_after.jstack
+----
+
+== Preguntas
+
+1. ¿Que diferencia vemos entre el thread dump de antes y el después?
+
+2. ¿Que indica la presencia del _DestroyJavaVM_ thread?
+
+3. ¿Que sucede luego de configurar mi thread como daemon?

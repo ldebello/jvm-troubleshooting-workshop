@@ -1,0 +1,21 @@
+= Threading
+
+* Cada cpu-core permite ejecutar un Thread
+* Cada Java Thread esta mapeado a un Native Thread
+* Thread States
+** New: Antes de invocar al método start().
+** Runnable: Ejecutando, Esperando ejecución, Esperando IO.
+** Terminated: El método run() finalizo.
+** Blocked: Esperando para acceder a un bloque o método sincronizado (Waiting for object monitor).
+** Waiting: Método wait(), join(), LockSupport.park()
+** Time Waiting: Método Thread.sleep(long millis), wait(int timeout), wait(int timeout, int nanos), Thread.join(long millis), LockSupport.parkNanos(long nanos), LockSupport.parkUntil(long milliseconds).
+* User Thread vs Daemon Thread
+** User Thread: La JVM finaliza luego que todos los Thread User han finalizando.
+** Daemon Thread: Se ejecutan mientras la aplicación este en ejecución, pero finalizan automáticamente cuando la JVM termina.
+* Race Condition
+* Thread safe
+* Fairness
+* Liveness problems
+** Deadlock
+** Livelock
+** Starvation

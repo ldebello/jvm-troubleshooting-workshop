@@ -1,0 +1,55 @@
+= Labs
+
+Estos laboratorios nos ayudaran a entender de forma practicar las herramientas que tenemos para analizar la JVM, asi como profundizar en algunos conceptos.
+
+* link:Lab1.adoc[Java Tools]
+* link:Lab2.adoc[Deadlock]
+* link:Lab3.adoc[Hidden Deadlock]
+* link:Lab4.adoc[Busy Thread]
+* link:Lab5.adoc[Hot Methods]
+* link:Lab6.adoc[Hot Methods]
+* link:Lab7.adoc[Latency]
+
+*Nota*: Debemos ejecutar `mvn clean package`, antes de utilizar los laboratorios.
+
+== Requerimientos
+
+Para ejecutar los laboratorios debemos instalar las tools que se mencionan link:../Tools/JavaTools.adoc#AdditionalTools[aquí].
+
+Estas pueden ser instaladas con el script `provision_mac.sh`.
+
+*Nota*: El script solo es valido en _macOS_.
+
+== Docker
+
+1) Crear la docker image
+
+[source,bash]
+----
+docker build -t jvm-troubleshooting-workshop:labs-alpine .
+----
+
+2) Ejecutar el container
+
+[source,bash]
+----
+docker run -it -v $(pwd):/labs jvm-troubleshooting-workshop:labs-alpine /bin/sh
+----
+
+3) Obtener el Container ID
+
+[source,bash]
+----
+docker ps --filter ancestor=jvm-troubleshooting-workshop:labs-alpine
+----
+
+4) Abrir una nueva terminal para interactuar con ese container
+
+[source,bash]
+----
+docker exec -it <CONTAINER ID> /bin/sh
+
+o
+
+docker exec -it $(docker ps -q --filter ancestor=jvm-troubleshooting-workshop:labs-alpine) /bin/sh
+----

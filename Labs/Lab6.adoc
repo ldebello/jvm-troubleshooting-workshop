@@ -1,0 +1,71 @@
+= Lab 6 - Hot Methods
+
+En este laboratorio veremos como encontrar los métodos mas ejecutados.
+
+*_Para ejecutar jcmd en este laboratorio vamos a necesitar Oracle JDK 8 o Open JDK 11_*
+
+*Nota*: Generalmente estos "Hot spots" son un buen lugar para empezar a optimizar.
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -l 6
+----
+
+2) Ejecutar jvmtop
+
+[source,bash]
+----
+./tools/jvmtop.sh -p <PID>
+----
+
+3) Ahora vamos a iniciar JFR desde jcmd
+
+[source,bash]
+----
+jcmd <PID> JFR.start settings=profile
+----
+
+4) Hacemos el dump del recording
+
+[source,bash]
+----
+jcmd <PID> JFR.dump name=<RECORDING_ID> filename=<RECORDING_FILE_PATH>
+----
+
+5) Detenemos la grabación
+
+[source,bash]
+----
+jcmd <PID> JFR.stop name=<RECORDING_ID>
+----
+
+== Opcional
+
+1) Podemos iniciar JFR para grabar durante un tiempo determinado
+
+[source,bash]
+----
+jcmd <PID> JFR.start filename=hot_methods_jcmd.jfr settings=profile delay=5s duration=30s
+----
+
+2) Podemos ver el estado de JFR
+
+[source,bash]
+----
+jcmd <PID> JFR.check
+----
+
+3) Otra alternativa es VisualVM
+
+* Abrir el proceso Java en VisualVM
+* Ir al tab Sampler
+* Utilizar el modo CPU
+* Hacer click en el botón "Hot spots"
+
+== Preguntas
+
+1. ¿Qué clase/método está consumiendo más recursos?
+
+2. ¿Qué podríamos mejorar nuestra aplicación?

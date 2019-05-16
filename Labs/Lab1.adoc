@@ -1,0 +1,63 @@
+= Lab 1 - Java Tools
+
+En este laboratorio veremos algunos comandos básicos del JDK.
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -l 1
+----
+
+2) Listar los procesos Java
+
+[source,bash]
+----
+jps -l
+----
+
+3) Mostrar hilos en ejecución
+
+[source,bash]
+----
+jstack -l <PID>
+----
+
+4) Ver estadísticas sobre los classloader cada 1000ms con un total de 5 veces
+
+[source,bash]
+----
+jstat -class <PID> 1000 5
+----
+
+5) Imprimir heap
+
+[source,bash]
+----
+jmap -heap <PID>
+----
+
+6) Imprimir histograma
+
+[source,bash]
+----
+jmap -histo <PID>
+----
+
+7) Utilizar JConsole
+
+[source,bash]
+----
+jconsole
+----
+
+8) Utilizar jcmd para obtener la información que obtuvimos con los comandos previos.
+
+[source,bash]
+----
+jcmd
+jcmd <PID> Thread.print
+jcmd <PID> VM.classloader_stats
+jcmd <PID> GC.heap_dump <FILE_NAME>
+jcmd <PID> GC.class_histogram
+----
