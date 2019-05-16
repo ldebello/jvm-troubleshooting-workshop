@@ -6,11 +6,11 @@ Estos laboratorios nos ayudaran a entender de forma practicar las herramientas q
 * link:Lab2.adoc[Deadlock]
 * link:Lab3.adoc[Hidden Deadlock]
 * link:Lab4.adoc[Busy Thread]
-* link:Lab5.adoc[Hot Methods]
+* link:Lab5.adoc[Zombie Process]
 * link:Lab6.adoc[Hot Methods]
 * link:Lab7.adoc[Latency]
 
-*Nota*: Debemos ejecutar `mvn clean package`, antes de utilizar los laboratorios.
+*Nota*: Debemos ejecutar `./mvnw clean package`, antes de utilizar los laboratorios.
 
 == Requerimientos
 

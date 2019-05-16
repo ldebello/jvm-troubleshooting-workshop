@@ -4,6 +4,7 @@
 VISUAL_VM='visualvm'
 MAT='mat'
 ANT='ant'
+MAVEN='maven'
 
 JMC='jmc'
 TDA='tda'
@@ -116,7 +117,7 @@ function main () {
   mkdir -p $INSTALLATION_DIR
 
   if [[ `command -v brew` ]]; then
-    for dependency in $VISUAL_VM $MAT $ANT $JMC $TDA $JVM_TOP; do
+    for dependency in $MAVEN $VISUAL_VM $MAT $ANT $JMC $TDA $JVM_TOP; do
       if [[ "$CHECK" == "YES" ]]; then
         check_installed_with_brew_cask $dependency
       elif [[ "$REMOVE" == "YES" ]]; then
@@ -124,7 +125,7 @@ function main () {
       else
         if [[ $dependency == "$JMC" ||  $dependency == "$TDA" ||  $dependency == "$JVM_TOP" ]]; then
           install_$dependency $dependency
-        elif [[ $dependency == "$ANT" ]]; then
+        elif [[ $dependency == "$ANT" ||  $dependency == "$MAVEN" ]]; then
           install_with_brew ${dependency}
         else
           install_with_brew_cask ${dependency}
