@@ -4,13 +4,13 @@ COMMAND_NAME=$0
 JAR="Labs-1.0.0-SNAPSHOT.jar"
 
 function usage() {
-  echo "Usage: $COMMAND_NAME [-l index]"
-  echo "  -l index    Number of lab to execute"
-  echo "  -p          Profile during 60s"
-  echo "  -r          Turn on Flight Recorder"
-  echo "  -s          Avoid Safepoint bias"
-  echo "  -t          Timeout in seconds"
-  echo "  -h          Display help"
+  echo "Usage: $COMMAND_NAME [-l name]"
+  echo "  -l name   Lab name"
+  echo "  -p        Profile during 60s"
+  echo "  -r        Turn on Flight Recorder"
+  echo "  -s        Avoid Safepoint bias"
+  echo "  -t        Timeout in seconds"
+  echo "  -h        Display help"
   exit 1
 }
 
@@ -35,18 +35,22 @@ function main() {
       TIMEOUT=$OPTARG
       ;;
     l )
-      LAB_INDEX=$OPTARG
+      LAB_NAME=$OPTARG
       ;;
     \? )
       echo "Invalid option -$OPTARG"
       ;;
     : )
       echo "Option -$OPTARG requires an argument"
+      if [[ "$OPTARG" == "l" ]]; then
+        ls -1 src/main/java/ar/com/javacuriosities/labs/
+        echo
+      fi
       ;;
   esac
   done
 
-  if [[ -z "$LAB_INDEX" ]]; then
+  if [[ -z "$LAB_NAME" ]]; then
     usage
   fi
 
@@ -62,7 +66,7 @@ function main() {
     JVM_OPTIONS+="-XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints "
   fi
 
-  MAIN_CLASS="ar.com.javacuriosities.labs.lab$LAB_INDEX.Main"
+  MAIN_CLASS="ar.com.javacuriosities.labs.$LAB_NAME.Main"
 
   java ${JVM_OPTIONS} -cp target/$JAR $MAIN_CLASS "$@"
 }

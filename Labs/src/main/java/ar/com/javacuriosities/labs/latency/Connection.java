@@ -1,4 +1,4 @@
-package ar.com.javacuriosities.labs.lab7;
+package ar.com.javacuriosities.labs.latency;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;

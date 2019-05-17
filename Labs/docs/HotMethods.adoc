@@ -1,4 +1,4 @@
-= Lab 6 - Hot Methods
+= Hot Methods
 
 En este laboratorio veremos como encontrar los métodos mas ejecutados.
 
@@ -10,7 +10,7 @@ En este laboratorio veremos como encontrar los métodos mas ejecutados.
 
 [source,bash]
 ----
-./run.sh -l 6
+./run.sh -l hot_methods
 ----
 
 2) Ejecutar jvmtop

@@ -1,4 +1,4 @@
-package ar.com.javacuriosities.labs.lab5;
+package ar.com.javacuriosities.labs.zombie_process;
 
 public class Worker implements Runnable {
 

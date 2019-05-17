@@ -1,4 +1,4 @@
-= Lab 5 - Zombie Process
+= Zombie Process
 
 En este laboratorio veremos como detectar que previene a un java process de terminar.
 
@@ -6,7 +6,7 @@ En este laboratorio veremos como detectar que previene a un java process de term
 
 [source,bash]
 ----
-./run.sh -l 5
+./run.sh -l zombie_process
 ----
 
 2) Listar los procesos Java

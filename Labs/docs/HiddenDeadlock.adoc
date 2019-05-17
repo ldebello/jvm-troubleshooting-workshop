@@ -1,12 +1,12 @@
-= Lab 2 - Deadlock
+= Hidden Deadlock
 
-En este laboratorio veremos un deadlock que es detectado por la JVM.
+En este laboratorio veremos un deadlock que no es detectado por la JVM.
 
 1) Abrir una terminal y ejecutar
 
 [source,bash]
 ----
-./run.sh -l 2
+./run.sh -l hidden_deadlock
 ----
 
 2) Listar los procesos Java

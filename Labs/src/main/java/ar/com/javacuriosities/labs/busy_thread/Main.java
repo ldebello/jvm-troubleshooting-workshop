@@ -1,4 +1,4 @@
-package ar.com.javacuriosities.labs.lab4;
+package ar.com.javacuriosities.labs.busy_thread;
 
 import ar.com.javacuriosities.utils.Utils;
 

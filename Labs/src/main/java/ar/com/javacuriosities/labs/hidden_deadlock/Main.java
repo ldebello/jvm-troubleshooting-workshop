@@ -1,4 +1,4 @@
-package ar.com.javacuriosities.labs.lab3;
+package ar.com.javacuriosities.labs.hidden_deadlock;
 
 import ar.com.javacuriosities.utils.Utils;
 

@@ -1,0 +1,17 @@
+= Memory Visibility
+
+En este laboratorio veremos como detectar que previene a un java process de terminar.
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -l memory_visibility
+----
+
+2) Listar los procesos Java
+
+[source,bash]
+----
+jps -l
+----

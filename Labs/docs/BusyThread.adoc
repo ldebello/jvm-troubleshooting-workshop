@@ -1,4 +1,4 @@
-= Lab 4 - Busy Thread
+= Busy Thread
 
 En este laboratorio veremos como encontrar cual de nuestros thread esta consumiendo el CPU.
 
@@ -6,7 +6,7 @@ En este laboratorio veremos como encontrar cual de nuestros thread esta consumie
 
 [source,bash]
 ----
-./run.sh -l 4
+./run.sh -l busy_thread
 ----
 
 2) Listar los procesos Java

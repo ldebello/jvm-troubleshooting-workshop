@@ -1,4 +1,4 @@
-package ar.com.javacuriosities.labs.lab5;
+package ar.com.javacuriosities.labs.zombie_process;
 
 import ar.com.javacuriosities.utils.Utils;
 
@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Utils.start(args);
 
-        Utils.dispatchWorkers(NUMBER_OF_THREADS, false, id -> new Worker(id));
+        Utils.dispatchWorkers(NUMBER_OF_THREADS, id -> new Worker(id), false);
 
         Utils.addShutdownHook(() -> System.exit(0));
 

@@ -46,10 +46,10 @@ public class Utils {
     }
 
     public static <T extends Runnable> List<T> dispatchWorkers(int numberOfThreads, Function<Integer, T> provider) {
-       return dispatchWorkers(numberOfThreads, true, provider);
+       return dispatchWorkers(numberOfThreads, provider, true);
     }
 
-    public static <T extends Runnable> List<T> dispatchWorkers(int numberOfThreads, boolean daemon, Function<Integer, T> provider) {
+    public static <T extends Runnable> List<T> dispatchWorkers(int numberOfThreads, Function<Integer, T> provider, boolean daemon) {
         List<T> workers = new ArrayList<>();
 
         ThreadGroup threadGroup = new ThreadGroup("Workers");

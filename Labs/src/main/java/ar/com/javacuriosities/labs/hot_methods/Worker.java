@@ -1,4 +1,4 @@
-package ar.com.javacuriosities.labs.lab6;
+package ar.com.javacuriosities.labs.hot_methods;
 
 import java.util.Random;
 
