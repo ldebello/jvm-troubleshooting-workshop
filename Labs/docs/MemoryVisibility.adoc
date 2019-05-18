@@ -15,3 +15,10 @@ En este laboratorio veremos como detectar que previene a un java process de term
 ----
 jps -l
 ----
+
+3) Recolectar 6 thread dumps con diferencia de 10 segundos.
+
+[source,bash]
+----
+./getstack-jstack.sh -p <PID> -c 6 -w 10 -o memory_visibility
+----

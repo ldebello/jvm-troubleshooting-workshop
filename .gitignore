@@ -21,4 +21,5 @@ target/
 lib/
 
 # Tools
+*.jstacks
 Labs/tools/

@@ -2,14 +2,15 @@
 
 COMMAND_NAME=$0
 WAIT_TIME=0.1
-OUTPUT=output.jstacks
+EXTENSION=jstacks
+OUTPUT=output
 
 function usage() {
   echo "Script to get multiples stacks using jstack"
   echo " -p       PID for the Java process"
-  echo " -o       Output file (Default to output.jstacks)"
+  echo " -o       Output file name (Default to ${OUTPUT}.${EXTENSION})"
   echo " -c       Specific a counter for the number of thread dumps (by default until process died)"
-  echo " -w       Time to wait between each stack (Default to 0.1 --> 100ms)"
+  echo " -w       Time to wait between each stack, value in seconds (Default to 0.1 --> 100ms)"
   exit 1
 }
 
@@ -47,13 +48,13 @@ function main() {
 
   if [[ -z ${MAX_COUNTER} ]]; then
     while ps -p ${PID} &>/dev/null; do
-      jstack ${PID} >> ${OUTPUT}
+      jstack -l ${PID} >> ${OUTPUT}.${EXTENSION}
       sleep ${WAIT_TIME}
     done
   else
     COUNTER=0
     while [[  ${COUNTER} -lt ${MAX_COUNTER} ]]; do
-      jstack ${PID} >> ${OUTPUT}-${COUNTER}.jstacks
+      jstack -l ${PID} >> ${OUTPUT}-${COUNTER}.${EXTENSION}
       sleep ${WAIT_TIME}
       let COUNTER=COUNTER+1
     done
