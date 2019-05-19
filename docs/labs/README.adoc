@@ -2,14 +2,14 @@
 
 Estos laboratorios nos ayudaran a entender de forma practicar las herramientas que tenemos para analizar la JVM, asi como profundizar en algunos conceptos.
 
-* link:docs/JavaTools.adoc[Lab 1 - Java Tools]
-* link:docs/Deadlock.adoc[Lab 2 - Deadlock]
-* link:docs/HiddenDeadloc.adoc[Lab 3 - Hidden Deadlock]
-* link:docs/BusyThread.adoc[Lab 4 - Busy Thread]
-* link:docs/ZombieProcess.adoc[Lab 5 - Zombie Process]
-* link:docs/HotMethods.adoc[Lab 6 - Hot Methods]
-* link:docs/MemoryVisibility.adoc[Lab 7 - Memory Visibility]
-* link:docs/Latency.adoc[Lab 8 - Latency]
+* link:JDKTools.adoc[Lab 1 - JDK Tools]
+* link:Deadlock.adoc[Lab 2 - Deadlock]
+* link:HiddenDeadloc.adoc[Lab 3 - Hidden Deadlock]
+* link:BusyThread.adoc[Lab 4 - Busy Thread]
+* link:ZombieProcess.adoc[Lab 5 - Zombie Process]
+* link:HotMethods.adoc[Lab 6 - Hot Methods]
+* link:MemoryVisibility.adoc[Lab 7 - Memory Visibility]
+* link:Latency.adoc[Lab 8 - Latency]
 
 *Nota*: Debemos ejecutar `./mvnw clean package`, antes de utilizar los laboratorios.
 

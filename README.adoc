@@ -14,8 +14,8 @@ Generalmente estos problemas se pueden asociar a:
 
 Se crearon algunos proyectos Java para ir explicando algunos conceptos y ejemplificar los problemas antes mencionados. Lo único necesario es *Docker*, *Oracle JDK/OpenJDK*.
 
-Módulos:
+Material:
 
-* link:Concepts/README.adoc[Concepts]
-* link:Tools/README.adoc[Tools]
-* link:Labs/README.adoc[Tools]
+* link:docs/labs/README.adoc[Labs]
+* link:docs/concepts/README.adoc[Concepts]
+* link:docs/tools/README.adoc[Workshop Tools]

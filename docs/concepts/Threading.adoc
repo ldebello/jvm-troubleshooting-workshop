@@ -1,5 +1,6 @@
 = Threading
 
+* Concurrencia vs Paralelismo
 * Cada cpu-core permite ejecutar un Thread
 * Cada Java Thread esta mapeado a un Native Thread
 * Thread States

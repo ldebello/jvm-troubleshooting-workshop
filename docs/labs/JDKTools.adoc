@@ -1,4 +1,4 @@
-= Java Tools
+= JDK Tools
 
 En este laboratorio veremos algunos comandos básicos del JDK.
 
