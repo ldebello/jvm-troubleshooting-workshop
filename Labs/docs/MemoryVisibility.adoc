@@ -20,5 +20,9 @@ jps -l
 
 [source,bash]
 ----
-./getstack-jstack.sh -p <PID> -c 6 -w 10 -o memory_visibility
+./scripts/getstack-jstack.sh -p <PID> -c 6 -w 10 -o memory_visibility
 ----
+
+== Preguntas
+
+1. ¿Que observamos de los Worker Thread?

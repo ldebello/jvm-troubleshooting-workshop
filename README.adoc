@@ -12,7 +12,7 @@ Generalmente estos problemas se pueden asociar a:
 
 == Introducción
 
-Se crearon algunos proyectos Java para ir explicando algunos conceptos y ejemplificar los problemas antes mencionados. Lo único necesario es *Docker*, *Oracle JDK/OpenJDK* y *Maven 3.x*.
+Se crearon algunos proyectos Java para ir explicando algunos conceptos y ejemplificar los problemas antes mencionados. Lo único necesario es *Docker*, *Oracle JDK/OpenJDK*.
 
 Módulos:
 
