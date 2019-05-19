@@ -1,4 +1,4 @@
-package ar.com.javacuriosities.labs.java_tools;
+package ar.com.javacuriosities.labs.jdk_tools;
 
 import ar.com.javacuriosities.utils.Utils;
 

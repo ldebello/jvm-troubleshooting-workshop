@@ -1,6 +1,8 @@
 = Threading
 
-* Concurrencia vs Paralelismo
+* Concurrency vs Parallelism
+** Concurrency: Existencia de multiples tareas.
+** Parallelism: Ejecución al mismo tiempo de multiples tareas.
 * Cada cpu-core permite ejecutar un Thread
 * Cada Java Thread esta mapeado a un Native Thread
 * Thread States
@@ -10,6 +12,9 @@
 ** Blocked: Esperando para acceder a un bloque o método sincronizado (Waiting for object monitor).
 ** Waiting: Método wait(), join(), LockSupport.park()
 ** Time Waiting: Método Thread.sleep(long millis), wait(int timeout), wait(int timeout, int nanos), Thread.join(long millis), LockSupport.parkNanos(long nanos), LockSupport.parkUntil(long milliseconds).
+* Compute vs Latency Events
+** Compute: Runnable
+** Latency: Blocked, Waiting, Time Waiting.
 * User Thread vs Daemon Thread
 ** User Thread: La JVM finaliza luego que todos los Thread User han finalizando.
 ** Daemon Thread: Se ejecutan mientras la aplicación este en ejecución, pero finalizan automáticamente cuando la JVM termina.

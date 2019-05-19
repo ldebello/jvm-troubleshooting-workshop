@@ -1,0 +1,24 @@
+= Garbage Collection
+
+* El Garbage Collector es responsable:
+** Asignar memoria.
+** Mantener los objetos vivos en la memoria.
+** Reclamar el espacio usado por objetos no alcanzables.
+* La memoria esta divida en dos areas Old Generation y Young Generation.
+* Premisas básicas:
+** La mayoría de los objetos mueren jóvenes.
+** Pocas referencias desde old objects to young objects.
+* Minor vs Major GC: El minor GC solo afecta al Young Generation, Major GC limpiar ambas areas.
+* El GC mantiene referencias a los GC Root (Root Set) para ver que objetos son alcanzables (Reachable objects).
+* Dependiendo el area podemos seleccionar un algoritmo especifico.
+** Young
+*** Serial: STW (Stop the world), copying collector single thread.
+*** Parallel Scavenge: STW (Stop the world), copying collector con multiples threads.
+*** ParNew: STW (Stop the world), copying collector con multiples threads. Version mejorada de Parallel Scavenge.
+** Old
+*** Serial Old: STW, Mark-Sweep-Compact single thread.
+*** CMS: Concurrent Mark Sweep, mayormente concurrente, pausas cortas.
+*** Parallel Old: Compacting collector con multiples threads.
+* El G1 es un garbage collector que maneja ambas regiones e intenta brindar pausas cortas.
+
+image::../images/GC.png[]

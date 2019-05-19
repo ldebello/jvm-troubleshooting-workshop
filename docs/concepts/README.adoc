@@ -4,3 +4,5 @@ Es indispensable que veamos algunos conceptos necesarios para poder resolver los
 no es tener una lista muy extensiva pero algunas cosas básicas.
 
 * link:Threading.adoc[Threading]
+* link:Memory.adoc[Memory]
+* link:GarbageCollection.adoc[Memory]

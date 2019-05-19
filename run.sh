@@ -1,7 +1,7 @@
 #!/bin/sh
 
 COMMAND_NAME=$0
-JAR="Labs-1.0.0-SNAPSHOT.jar"
+JAR="JVMTroubleshootingWorkshop-1.0.0-SNAPSHOT.jar"
 
 function usage() {
   echo "Usage: $COMMAND_NAME [-l name]"

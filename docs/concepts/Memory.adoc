@@ -1,0 +1,10 @@
+= Memory
+
+* Memory Pools
+** PS Eden Space (Heap)
+** PS Survivor Space (Heap)
+** PS Old Gen (Heap)
+** Metaspace (Non Heap): A partir de JDK 8 no se utiliza mas el PermGen y se almacena metadata en esta area, el maximo tamaño es la memoria total o se puede limitar por medio del parámetro MaxMetaspaceSize.
+*** Compressed Class Space: Esta area almacena Class metadata y solo es utilizada si las opciones UseCompressedOops y UseCompressedClassPointers están habilitadas.
+** Code Cache (Non Heap): Se almacena el código compilado por el JIT (Just In Time) compiler. Memoria nativa controlada por el Code Cache Sweeper.
+* Young vs Old Generation: El Young generation esta formado por el Eden Space y los Survivor Space. El Old es simplemente el Old Gen.

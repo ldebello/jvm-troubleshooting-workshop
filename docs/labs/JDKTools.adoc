@@ -6,7 +6,7 @@ En este laboratorio veremos algunos comandos básicos del JDK.
 
 [source,bash]
 ----
-./run.sh -l java_tools
+./run.sh -l jdk_tools
 ----
 
 2) Listar los procesos Java
