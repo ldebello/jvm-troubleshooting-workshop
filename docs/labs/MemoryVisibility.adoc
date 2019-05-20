@@ -20,7 +20,7 @@ jps -l
 
 [source,bash]
 ----
-./scripts/getstack-jstack.sh -p <PID> -c 6 -w 10 -o memory_visibility
+./scripts/get_thread_stacks.sh -p <PID> -c 6 -w 10 -o memory_visibility
 ----
 
 == Preguntas

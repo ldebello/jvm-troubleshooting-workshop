@@ -9,14 +9,18 @@ En este laboratorio veremos como solucionar un Memory Leak.
 ./run.sh -l memory_allocation
 ----
 
-2) Listar los procesos Java
+2) Abrir JMC, buscar el proceso Java y conectar la consola JMX.
+
+3) Seleccionar el tab _Memory_ y verificar que areas están creciendo.
+
+4) Seleccionar el tab _Threds_ y hacer click en el checkbox _Allocation_ para ver que Thread esta pidiendo mas memoria.
+
+5) Recolectar 6 histogramas con diferencia de 10 segundos.
 
 [source,bash]
 ----
-jps -l
+./scripts/get_class_histograms.sh -p <PID> -c 6 -w 10 -o memory_allocation
 ----
-
-3) Abrir JMC, buscar el proceso Java y conectar la consola JMX.
 
 == Preguntas
 

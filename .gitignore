@@ -20,6 +20,10 @@ target/
 # Dependencies
 lib/
 
-# Tools
+# Scripts
+*.histo
 *.jstacks
+scripts/outputs/
+
+# Tools
 tools/
