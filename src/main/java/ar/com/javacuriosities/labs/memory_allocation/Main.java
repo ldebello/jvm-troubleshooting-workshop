@@ -1,5 +1,7 @@
 package ar.com.javacuriosities.labs.memory_allocation;
 
+import ar.com.javacuriosities.utils.Utils;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +11,8 @@ public class Main {
     public static final int COUNT = 10_000;
 
     public static void main(String[] args) {
+        Utils.start(args);
+
         EntityRepository repository = new EntityRepository();
 
         int counter = 0;

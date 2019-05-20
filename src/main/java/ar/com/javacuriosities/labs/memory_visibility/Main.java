@@ -6,6 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
         try {
+            Utils.start(args);
+
             Meeting meeting = new Meeting();
 
             Utils.dispatchWorkers(3, id -> new Worker(id, meeting), false);

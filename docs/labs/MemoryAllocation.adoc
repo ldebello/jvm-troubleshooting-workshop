@@ -22,6 +22,13 @@ En este laboratorio veremos como solucionar un Memory Leak.
 ./scripts/get_class_histograms.sh -p <PID> -c 6 -w 10 -o memory_allocation
 ----
 
+6) Volver a lanzar la aplicación pero con JFR
+
+[source,bash]
+----
+./run.sh -t 120 -l memory_allocation -p
+----
+
 == Preguntas
 
-1. ¿Que observamos de los Worker Thread?
+1. ¿Que clases se instancian mas?
