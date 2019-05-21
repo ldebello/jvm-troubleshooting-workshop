@@ -10,6 +10,7 @@ Estos laboratorios nos ayudaran a entender de forma practicar las herramientas q
 * link:HotMethods.adoc[Lab 6 - Hot Methods]
 * link:MemoryVisibility.adoc[Lab 7 - Memory Visibility]
 * link:Latency.adoc[Lab 8 - Latency]
+* link:MemoryAllocation.adoc[Lab 9 - Memory Allocation]
 
 *Nota*: Debemos ejecutar `./mvnw clean package`, antes de utilizar los laboratorios.
 
