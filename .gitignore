@@ -26,4 +26,4 @@ lib/
 scripts/outputs/
 
 # Tools
-tools/
+/tools/

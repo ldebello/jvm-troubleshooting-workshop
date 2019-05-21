@@ -1,0 +1,77 @@
+= JDK Tools
+
+Explicación sobre las tools del JDK.
+
+*Nota*: Estas tools generalmente necesitan ser corridas con la misma version de Java y el mismo user.
+
+== jps
+
+Lista las JVM en ejecución, estas pueden ser locales y/o remotas
+
+Parámetros:
+
+-q Solo muestra el VM Identifier.
+
+-m Muestra los argumentos enviados al método main.
+
+-l Muestra el FQN de la clase que tiene el main principal.
+
+-v Muestra los argumentos enviados a la JVM.
+
+-V Muestra los argumentos enviados por el flag `-XX:Flags=<filename>`
+
+== jmap
+
+Permite obtener información sobre la memoria de un proceso Java
+
+Parámetros:
+
+-heap Muestra información de las areas de memoria del heap.
+
+-histo Genera un histograma.
+
+-histo:live Genera un histograma solo con los objetos vivos.
+
+-clstats Muestra información sobre los class loaders.
+
+-finalizerinfo Muestra información sobre los objetos que están para ser finalizados.
+
+-dump:live,format=b,file=/tmp/dump.hprof Genera un memory dump.
+
+== jstack
+
+Permite obtener información sobre los threads de un proceso Java
+
+Parámetros:
+
+-F Fuerza un thread dump.
+-m Imprime Java y Native frames (mixed mode).
+-l Imprime información sobre locks.
+
+== jstat
+
+Permite hacer monitoring de algunas cosas especificas, i.e. class, compiler, gc
+
+Parámetros:
+
+-options Nos permite listar sobre que podemos hacer monitoring.
+
+-<option> <VMID> <interval> <count> Permite hacer monitoring de la opción especificada cada cierto intervalo y un numero finito de ejecuciones.
+
+== jcmd
+
+Es la herramienta recomendada ya que engloba en una sola la funcionalidad de las anteriores.
+
+jcmd -> Nos muestra los procesos Java en ejecución.
+
+jcmd <PID> help -> Nos muestra que comandos podemos ejecutar.
+
+jcmd <PID> PerfCounter.print -> Muestra métricas de performance.
+
+jcmd <PID> Thread.print -> Thread dump como `jstack` (-l para información sobre locks)
+
+jcmd <PID> ManagementAgent.start jmxremote.ssl=false jmxremote.authenticate=false jmxremote.port=<PORT> -> Habilitar JMX en un proceso en ejecución.
+
+jcmd <PID> GC.heap_dump -> Genera un heap dump como `jmap`, se puede usar la opción -all para evitar un Full GC.
+
+jcmd <PID> GC.class_histogram -> Genera un histograma como `jmap`, se puede usar la opción -all para evitar un Full GC.
