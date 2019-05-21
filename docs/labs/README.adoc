@@ -16,7 +16,7 @@ Estos laboratorios nos ayudaran a entender de forma practicar las herramientas q
 
 == Requerimientos
 
-Para ejecutar los laboratorios debemos instalar las tools que se mencionan link:../Tools/JavaTools.adoc#AdditionalTools[aquí].
+Para ejecutar los laboratorios debemos instalar las tools que se mencionan link:../Tools/README.adoc#AdditionalTools[aquí].
 
 Estas pueden ser instaladas con el script `provision_mac.sh`.
 
