@@ -4,7 +4,7 @@ Estos laboratorios nos ayudaran a entender de forma practicar las herramientas q
 
 * link:JDKTools.adoc[Lab 1 - JDK Tools]
 * link:Deadlock.adoc[Lab 2 - Deadlock]
-* link:HiddenDeadloc.adoc[Lab 3 - Hidden Deadlock]
+* link:HiddenDeadlock.adoc[Lab 3 - Hidden Deadlock]
 * link:BusyThread.adoc[Lab 4 - Busy Thread]
 * link:ZombieProcess.adoc[Lab 5 - Zombie Process]
 * link:HotMethods.adoc[Lab 6 - Hot Methods]
