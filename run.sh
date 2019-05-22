@@ -29,6 +29,7 @@ function main() {
     p )
       RECORDING="yes"
       PROFILER="yes"
+      PATH_TO_GC_ROOT="yes"
       PROFILER_DURATION=$OPTARG
       ;;
     s )
@@ -66,9 +67,15 @@ function main() {
     JVM_OPTIONS="-XX:+FlightRecorder "
   fi
 
+  if [[ ! -z "$PATH_TO_GC_ROOT" ]]; then
+    PATH_TO_GC_ROOT_OPTION=",path-to-gc-roots=true"
+  fi
+
   if [[ ! -z "$PROFILER" ]]; then
     PROFILER_DURATION=${PROFILER_DURATION:-${TIMEOUT:-$DEFAULT_PROFILER_DURATION}}
-    JVM_OPTIONS+="-XX:StartFlightRecording=duration=${PROFILER_DURATION}s,settings=profile,filename=./tools/recording_${LAB_NAME}.jfr "
+    JVM_OPTIONS+="-XX:StartFlightRecording=duration=${PROFILER_DURATION}s$PATH_TO_GC_ROOT_OPTION,settings=profile,filename=./tools/recording_${LAB_NAME}.jfr "
+
+    echo "Recording duration: ${PROFILER_DURATION}s"
   fi
 
   if [[ ! -z "$AVOID_SAFEPOINT_BIAS" ]]; then
