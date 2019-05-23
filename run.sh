@@ -12,12 +12,13 @@ function usage() {
   echo "  -r            Turn on Flight Recorder"
   echo "  -s            Avoid Safepoint bias"
   echo "  -t seconds    Timeout in seconds"
+  echo "  -d            Heap Dump on OOM"
   echo "  -h            Display help"
   exit 1
 }
 
 function main() {
-  while getopts ":l:t:p: hrs" opt
+  while getopts ":l:t:p: hrds" opt
   do
     case $opt in
     h )
@@ -25,6 +26,9 @@ function main() {
       ;;
     r )
       RECORDING="yes"
+      ;;
+    d )
+      HEAP_DUMP_ON_OOM="yes"
       ;;
     p )
       RECORDING="yes"
@@ -80,6 +84,10 @@ function main() {
 
   if [[ ! -z "$AVOID_SAFEPOINT_BIAS" ]]; then
     JVM_OPTIONS+="-XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints "
+  fi
+
+  if [[ ! -z "HEAP_DUMP_ON_OOM" ]]; then
+    JVM_OPTIONS+="-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp "
   fi
 
   MAIN_CLASS="ar.com.javacuriosities.labs.$LAB_NAME.Main"

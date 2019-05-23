@@ -1,4 +1,4 @@
-package ar.com.javacuriosities.labs.memory_allocation;
+package ar.com.javacuriosities.labs.memory_leak;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package ar.com.javacuriosities.labs.memory_allocation;
+package ar.com.javacuriosities.labs.memory_leak;
 
 import ar.com.javacuriosities.utils.Utils;
 
@@ -21,18 +21,8 @@ public class Main {
             Map<Integer, Entity> data = createMapWithInstances(COUNT);
             Collection<Entity> values = data.values();
 
-
-            for (Entity e : values) {
-                if (!data.containsKey(e.getId())) {
-                    System.out.println("This can not happen!!!");
-                }
-            }
-
             for (int i = 0; i < 10; i++) {
                 for (Entity e : values) {
-                    if (data.get(e.getId()).toString().length() == 1) {
-                        System.out.println("This can not happen!!!");
-                    }
                     if (e.getId() % 10 == 0) {
                         repository.put(e);
                     }
