@@ -1,0 +1,7 @@
+= OQL
+
+Es un lenguaje de consulta para analizar nuestros objetos, aunque dependiendo el cliente que utilicemos la sintaxis puede variar, por ejemplo
+VisualVM nos permite usar JavaScript para nuestras consultas.
+
+* https://htmlpreview.github.io/?https://raw.githubusercontent.com/visualvm/visualvm.java.net.backup/master/www/oqlhelp.html[VisualVM OQL Syntax]
+* https://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.mat.ui.help%2Freference%2Foqlsyntax.html[Eclipse Memory Analyzer OQL Syntax]

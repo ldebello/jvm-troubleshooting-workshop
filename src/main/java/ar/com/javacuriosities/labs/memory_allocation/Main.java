@@ -1,4 +1,4 @@
-package ar.com.javacuriosities.labs.memory_leak;
+package ar.com.javacuriosities.labs.memory_allocation;
 
 import ar.com.javacuriosities.utils.Utils;
 

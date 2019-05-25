@@ -30,4 +30,4 @@ Nos brinda una vista util para encontrar cual es el Thread reteniendo mas memori
 
 == OQL
 
-Podemos ejecutar queries sobre el estado de nuestro objetos.
+Podemos ejecutar queries sobre el estado de nuestro objetos, `link:OQL.adoc[detalles]`.

@@ -1,0 +1,10 @@
+= Load Classes
+
+En este laboratorio veremos el uso de classloader y las areas de memoria PermGen/Metaspace.
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -l load_classes
+----
