@@ -9,16 +9,19 @@ function usage() {
   echo "Usage: $COMMAND_NAME [-l name]"
   echo "  -l name       Lab name"
   echo "  -p [seconds]  Profile (Default ${DEFAULT_PROFILER_DURATION}s)"
-  echo "  -r            Turn on Flight Recorder"
-  echo "  -s            Avoid Safepoint bias"
-  echo "  -t seconds    Timeout in seconds"
+  echo "  -g            GC Details"
   echo "  -d            Heap Dump on OOM"
+  echo "  -m            Maximum Metaspace"
+  echo "  -t seconds    Timeout in seconds"
+  echo "  -s            Avoid Safepoint bias"
+  echo "  -r            Turn on Flight Recorder"
+  echo "  -c            Trace Class Loading/Unloading"
   echo "  -h            Display help"
   exit 1
 }
 
 function main() {
-  while getopts ":l:t:p: hrds" opt
+  while getopts ":l:t:p:m: hrdscg" opt
   do
     case $opt in
     h )
@@ -27,8 +30,17 @@ function main() {
     r )
       RECORDING="yes"
       ;;
+    c )
+      TRACE_CLASSES="yes"
+      ;;
+    g )
+      GC_DETAILS="yes"
+      ;;
     d )
       HEAP_DUMP_ON_OOM="yes"
+      ;;
+    m )
+      MAX_METASPACE=$OPTARG
       ;;
     p )
       RECORDING="yes"
@@ -86,9 +98,23 @@ function main() {
     JVM_OPTIONS+="-XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints "
   fi
 
-  if [[ ! -z "HEAP_DUMP_ON_OOM" ]]; then
+  if [[ ! -z "$HEAP_DUMP_ON_OOM" ]]; then
     JVM_OPTIONS+="-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp "
   fi
+
+  if [[ ! -z "$MAX_METASPACE" ]]; then
+    JVM_OPTIONS+="-XX:MaxMetaspaceSize=${MAX_METASPACE}m "
+  fi
+
+  if [[ ! -z "$TRACE_CLASSES" ]]; then
+    JVM_OPTIONS+="-XX:+TraceClassLoading -XX:+TraceClassUnloading "
+  fi
+
+  if [[ ! -z "$GC_DETAILS" ]]; then
+    JVM_OPTIONS+="-XX:+PrintGCDetails "
+  fi
+
+
 
   MAIN_CLASS="ar.com.javacuriosities.labs.$LAB_NAME.Main"
 

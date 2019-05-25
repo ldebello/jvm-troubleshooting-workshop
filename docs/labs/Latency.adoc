@@ -1,6 +1,6 @@
 = Latency
 
-En este laboratorio veremos como analizar nuestra aplicaciones tiene un rendimiento menor al esperado. Si el CPU no esta saturado esto puede deberse a problemas de sincronización.
+En este laboratorio veremos como analizar nuestra aplicaciones cuando tienen un rendimiento menor al esperado. Si el CPU no esta saturado esto puede deberse a problemas de sincronización.
 
 1) Abrir una terminal y ejecutar
 

@@ -1,10 +1,18 @@
 = Load Classes
 
-En este laboratorio veremos el uso de classloader y las areas de memoria PermGen/Metaspace.
+En este laboratorio veremos el uso de memoria al no reutilizar classes.
 
 1) Abrir una terminal y ejecutar
 
 [source,bash]
 ----
-./run.sh -l load_classes
+./run.sh -m 50 -l load_classes
 ----
+
+2) Abrir JConsole
+
+Ir al tab _Memory_ y ver el chart de `Metaspace`, dejar ejecutando el programa algunos minutos.
+
+== Preguntas
+
+1. ¿Que patron de uso de memoria vemos?

@@ -18,7 +18,7 @@ public class Main {
                 Class clazz = customClassLoader.loadClass(CLASS_NAME);
                 customClassLoader.close();
 
-                Thread.sleep(100);
+                Thread.sleep(10);
             } catch (Exception e) {
                 e.printStackTrace();
             }

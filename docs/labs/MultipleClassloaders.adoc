@@ -1,0 +1,12 @@
+= Multiple Classloaders
+
+En este laboratorio veremos el uso de multiples classloaders.
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -l multiple_classloaders
+----
+
+2) Abrir JMC
