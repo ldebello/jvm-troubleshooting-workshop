@@ -11,14 +11,18 @@ En este laboratorio veremos un ClassCastException no tan común.
 
 2) Abrir VisualVM y obtener un `Heap Dump` antes de presionar enter.
 
-3) Luego Abrir el `Heap Dump` con MAT (Memory Analyzer Thread) y ejecutar la siguiente query OQL.
+3) Luego Abrir el `Heap Dump` con MAT (Memory Analyzer Thread).
 
 [source,bash]
 ----
-# List objects
+# Histogram -> Option Group by class loader
+
+# Action -> Duplicate Classes
+
+# OQL Query: List objects
 SELECT * FROM ar.com.javacuriosities.labs.multiple_classloaders.DataObject
 
-# List classes
+# OQL Query: List classes
 SELECT * FROM OBJECTS ar.com.javacuriosities.labs.multiple_classloaders.DataObject
 ----
 

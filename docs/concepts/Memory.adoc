@@ -16,11 +16,20 @@
 ** java.lang.OutOfMemoryError: PermGen Space: Lleno de clases cargadas y metadata y la aplicación quiere cargas mas clases, la JVM ya invoco un Full GC, puede ser que el PermGen es pequeño o que haya un leak.
 ** java.lang.OutOfMemoryError: Metaspace: Por defecto el Metaspace es ilimitado, su maximo se configura usando `MaxMetaspaceSize`, esta exception indica que esta lleno con clases cargadas y metadata y la aplicación quiere cargar mas, la JVM ya invoco un Full GC, puede ser que el Metaspace es pequeño o que haya un leak.
 ** java.lang.OutOfMemoryError: Compressed class space: Si la opción `UseCompressedClassPointers` es activada hay dos areas de memoria nativa usadas para las clases y la metadata. Por defecto esta area tiene un maximo de un 1GB.
+** java.lang.OutOfMemoryError: Unable to create new native Thread: No hay mas memoria nativa para crear un thread nuevo, esto se puede deber a un thread stack muy grande o muchos threads vivos.
 * Native Memory:
 ** Java Thread Stacks
 ** Archivos jar y zip
 ** Bibliotecas nativas
 ** Recursos nativos e.g. archivos
 ** Memoria alocada por código nativo e.g. JNI
+* OOM Típicos:
+** Memory leak static Fields
+** Unclosed Resources
+** Improper equals() and hashCode() Implementations
+** Inner Classes That Reference Outer Classes
+** Through finalize() Methods
+** Interned Strings
+** Using ThreadLocals
 
 image::../images/MemoryIssues.png[]
