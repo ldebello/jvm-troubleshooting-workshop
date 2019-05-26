@@ -1,6 +1,6 @@
 = Multiple Classloaders
 
-En este laboratorio veremos el uso de multiples classloaders.
+En este laboratorio veremos un ClassCastException no tan común.
 
 1) Abrir una terminal y ejecutar
 
@@ -9,4 +9,18 @@ En este laboratorio veremos el uso de multiples classloaders.
 ./run.sh -l multiple_classloaders
 ----
 
-2) Abrir JMC
+2) Abrir VisualVM y obtener un `Heap Dump` antes de presionar enter.
+
+3) Luego Abrir el `Heap Dump` con MAT (Memory Analyzer Thread) y ejecutar la siguiente query OQL.
+
+[source,bash]
+----
+# List objects
+SELECT * FROM ar.com.javacuriosities.labs.multiple_classloaders.DataObject
+
+# List classes
+SELECT * FROM OBJECTS ar.com.javacuriosities.labs.multiple_classloaders.DataObject
+----
+
+
+
