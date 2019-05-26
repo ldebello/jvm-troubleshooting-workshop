@@ -3,6 +3,7 @@
 Es indispensable que veamos algunos conceptos necesarios para poder resolver los problemas en nuestras aplicaciones, la idea
 no es tener una lista muy extensiva pero algunas cosas básicas.
 
-* link:Threading.adoc[Threading]
 * link:Memory.adoc[Memory]
-* link:GarbageCollection.adoc[Memory]
+* link:Threading.adoc[Threading]
+* link:Classloading.adoc[Classloading]
+* link:GarbageCollection.adoc[Garbage Collection]

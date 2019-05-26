@@ -1,6 +1,6 @@
-= Classloader
+= Classloading
 
-* Las clases son cargadas en memoria por medio de classloaders.
+* La función del Classloader es cargar en memoria las clases.
 * Una clase se puede inicializar una única vez por classloader.
 * Parent First vs Parent Last
 ** Parent First: Primero se delega el cargado de la clase
