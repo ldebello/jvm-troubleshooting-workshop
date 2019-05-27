@@ -23,7 +23,7 @@ jps -l
 jstack -l <PID>
 ----
 
-4) Ver estadísticas sobre los classloader cada 1000ms con un total de 5 veces
+4) Ver estadísticas sobre los class loader cada 1000ms con un total de 5 veces
 
 [source,bash]
 ----

@@ -7,11 +7,13 @@ import java.util.List;
 
 public class Main {
 
-    private static final int COUNT_CLASSLOADER_A = 5;
-    private static final int COUNT_CLASSLOADER_B = 10;
-    private static final int COUNT_CLASSLOADER_C = 15;
+    private static final int COUNT_CLASS_LOADER_A = 5;
+    private static final int COUNT_CLASS_LOADER_B = 10;
+    private static final int COUNT_CLASS_LOADER_C = 15;
 
     public static void main(String[] args) {
+        Utils.start(args);
+
         CustomLoader loaderA = new CustomLoader("A");
         CustomLoader loaderB = new CustomLoader("B");
         CustomLoader loaderC = new CustomLoader("C");
@@ -21,30 +23,30 @@ public class Main {
 
             DataObject dataObject = new DataObject();
 
-            Object dataObjectClassloaderA = null;
-            Object dataObjectClassloaderB = null;
-            Object dataObjectClassloaderC = null;
+            Object dataObjectClassLoaderA = null;
+            Object dataObjectClassLoaderB = null;
+            Object dataObjectClassLoaderC = null;
 
             objects.add(dataObject);
 
-            for (int i = 0; i < COUNT_CLASSLOADER_A; i++) {
-                dataObjectClassloaderA = loaderA.loadClass(DataObject.class.getCanonicalName()).newInstance();
-                objects.add(dataObjectClassloaderA);
+            for (int i = 0; i < COUNT_CLASS_LOADER_A; i++) {
+                dataObjectClassLoaderA = loaderA.loadClass(DataObject.class.getCanonicalName()).newInstance();
+                objects.add(dataObjectClassLoaderA);
             }
 
-            for (int i = 0; i < COUNT_CLASSLOADER_B; i++) {
-                dataObjectClassloaderB = loaderB.loadClass(DataObject.class.getCanonicalName()).newInstance();
-                objects.add(dataObjectClassloaderB);
+            for (int i = 0; i < COUNT_CLASS_LOADER_B; i++) {
+                dataObjectClassLoaderB = loaderB.loadClass(DataObject.class.getCanonicalName()).newInstance();
+                objects.add(dataObjectClassLoaderB);
             }
 
-            for (int i = 0; i < COUNT_CLASSLOADER_C; i++) {
-                dataObjectClassloaderC = loaderC.loadClass(DataObject.class.getCanonicalName()).newInstance();
-                objects.add(dataObjectClassloaderC);
+            for (int i = 0; i < COUNT_CLASS_LOADER_C; i++) {
+                dataObjectClassLoaderC = loaderC.loadClass(DataObject.class.getCanonicalName()).newInstance();
+                objects.add(dataObjectClassLoaderC);
             }
 
             Utils.waitForUser();
 
-            dataObject = (DataObject) dataObjectClassloaderA;
+            dataObject = (DataObject) dataObjectClassLoaderA;
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
             e.printStackTrace();
         }

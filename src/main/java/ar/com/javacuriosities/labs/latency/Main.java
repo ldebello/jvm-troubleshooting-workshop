@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         Utils.start(args);
 
-        List<Worker> workers = Utils.dispatchWorkers(NUMBER_OF_THREADS, id -> new Worker(id));
+        List<Worker> workers = Utils.dispatchWorkers(NUMBER_OF_THREADS, Worker::new);
 
         Utils.addShutdownHook(() -> {
             Connection.shutdown();

@@ -1,4 +1,4 @@
-= Multiple Classloaders
+= Multiple Class loaders
 
 En este laboratorio veremos un ClassCastException no tan común.
 

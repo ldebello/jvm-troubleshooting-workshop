@@ -12,7 +12,8 @@ Estos laboratorios nos ayudaran a entender de forma practicar las herramientas q
 * link:Latency.adoc[Lab 8 - Latency]
 * link:MemoryAllocation.adoc[Lab 9 - Memory Allocation]
 * link:LoadClasses.adoc[Lab 10 - Load Classes]
-* link:MultipleClassloaders.adoc[Lab 11 - Multiple Classloaders]
+* link:MultipleClassloaders.adoc[Lab 11 - Multiple Class loaders]
+* link:Exceptions.adoc[Lab 12 - Exceptions]
 
 *Nota*: Debemos ejecutar `./mvnw clean package`, antes de utilizar los laboratorios.
 

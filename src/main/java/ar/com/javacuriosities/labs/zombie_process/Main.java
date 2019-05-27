@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Utils.start(args);
 
-        Utils.dispatchWorkers(NUMBER_OF_THREADS, id -> new Worker(id), false);
+        Utils.dispatchWorkers(NUMBER_OF_THREADS, Worker::new, false);
 
         Utils.addShutdownHook(() -> System.exit(0));
 
