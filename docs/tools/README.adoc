@@ -57,6 +57,7 @@ Además hay herramientas adicionales que pueden ser de utilidad.
 * https://www.eclipse.org/mat/downloads.php[Memory Analyzer Thread]: Un Heap Analyzer, `link:MemoryAnalyzerThread.adoc[detalles]`.
 * https://github.com/irockel/tda[TDA]: Thread Dump Analyzer.
 * https://github.com/patric-r/jvmtop[JVMTop]: Command line interface similar a top para procesos Java.
+* https://gceasy.io/[GCEasy]: Universal GC Log Analyzer.
 * https://github.com/jewes/gchisto[GCHisto]: GC Logs Parser.
 * https://github.com/chewiebug/GCViewer[GCViewer]: GC Logs Parser.
 * https://github.com/dmart28/gcplot-docker[GCPlot]: GC Log Analyzer.

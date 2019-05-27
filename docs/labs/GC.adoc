@@ -6,7 +6,7 @@ En este laboratorio veremos como obtener información sobre el garbage collector
 
 [source,bash]
 ----
-./run.sh -g -l gc
+./run.sh -g -o -r -l gc
 ----
 
 2) Iniciar JMC e iniciar una grabación de 1 minuto.
@@ -16,6 +16,8 @@ En este laboratorio veremos como obtener información sobre el garbage collector
 4) Ir al tab _Memory_, aquí podremos ver que tipo de objetos están siendo alocados.
 
 5) Ir al tab _TLAB Allocations_, aquí podremos ver por thread cuantas allocations estamos haciendo.
+
+6) Ir a https://gceasy.io/index.jsp[GCEasy] y subir el log del GC.
 
 == Preguntas
 
