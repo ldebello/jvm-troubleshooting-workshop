@@ -12,7 +12,16 @@ alocar nuestro hprof en su propia carpeta antes del análisis.
 
 == Dominator Tree
 
-Es una vista donde nos muestra distintos GC Roots y se pueden organizar por Retained Heap.
+Es una vista donde nos muestra distintos GC Roots y podemos obtener información importante sobre nuestros objetos.
+
+=== Incoming/Outgoing References
+
+image::../images/IncomingOutgoingReferences.png[]
+
+* C -> Incoming References: A y B son incoming references de C (También la clase C).
+* C -> Outgoing References: D y E son outgoing references de C (También la clase C).
+
+=== Shallow/Retained Heap
 
 image::../images/ShallowAndRetainedHeap.png[]
 
