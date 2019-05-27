@@ -17,7 +17,14 @@ En este laboratorio veremos como obtener información sobre el garbage collector
 
 5) Ir al tab _TLAB Allocations_, aquí podremos ver por thread cuantas allocations estamos haciendo.
 
-6) Ir a https://gceasy.io/index.jsp[GCEasy] y subir el log del GC.
+6) Ejecutar GCViewer y abrir nuestro GC log.
+
+[source,bash]
+----
+./tools/gc_viewer.sh
+----
+
+7) Ir a https://gceasy.io/index.jsp[GCEasy] y subir el log del GC.
 
 == Preguntas
 
@@ -26,3 +33,5 @@ En este laboratorio veremos como obtener información sobre el garbage collector
 2. ¿Qué clases se instancian más? ¿Donde? ¿Por qué?
 
 3. ¿Como podemos arreglar nuestro programa sin modificar la idea del programa?
+
+4. ¿Que Throughput tenemos?
