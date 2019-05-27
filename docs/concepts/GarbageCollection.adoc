@@ -20,5 +20,8 @@
 *** CMS: Concurrent Mark Sweep, mayormente concurrente, pausas cortas.
 *** Parallel Old: Compacting collector con multiples threads.
 * El G1 es un garbage collector que maneja ambas regiones e intenta brindar pausas cortas.
+* GC Logging: Desde la version 9 de Java se utiliza la arquitectura de `Unified logging` lo cual cambia la forma de indicar sobre que queremos obtener logging, `link:UnifiedLogging.adoc[detalles]`.
 
 image::../images/GC.png[]
+
+image::../images/GCCombinations.png[]

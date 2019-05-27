@@ -33,4 +33,6 @@
 ** Interned Strings
 ** Using ThreadLocals
 
+image::../images/Memory.png[]
+
 image::../images/MemoryIssues.png[]

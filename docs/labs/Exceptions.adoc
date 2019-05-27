@@ -9,7 +9,7 @@ En este laboratorio veremos el impacto de las exceptions en nuestro proceso Java
 ./run.sh -r -l exceptions
 ----
 
-2) Iniciar JMC e iniciar una grabación pero indicando que haga tracing de todas las exceptions.
+2) Iniciar JMC e iniciar una grabación de 1 minuto, pero indicando que haga tracing de todas las exceptions.
 
 3) Seleccionar el tab _Exceptions_ y ver las exceptions arrojadas. Algunas opciones útiles son `Store and Set As Focused Selection`.
 

@@ -16,12 +16,13 @@ function usage() {
   echo "  -s            Avoid Safepoint bias"
   echo "  -r            Turn on Flight Recorder"
   echo "  -c            Trace Class Loading/Unloading"
+  echo "  -o            Use Java 8 Default GC"
   echo "  -h            Display help"
   exit 1
 }
 
 function main() {
-  while getopts ":l:t:p:m: hrdscg" opt
+  while getopts ":l:t:p:m: hrdscog" opt
   do
     case $opt in
     h )
@@ -32,6 +33,9 @@ function main() {
       ;;
     c )
       TRACE_CLASSES="yes"
+      ;;
+    o )
+      DEFAULT_JAVA_8_GC="yes"
       ;;
     g )
       GC_DETAILS="yes"
@@ -110,11 +114,13 @@ function main() {
     JVM_OPTIONS+="-XX:+TraceClassLoading -XX:+TraceClassUnloading "
   fi
 
-  if [[ ! -z "$GC_DETAILS" ]]; then
-    JVM_OPTIONS+="-XX:+PrintGCDetails "
+  if [[ ! -z "$DEFAULT_JAVA_8_GC" ]]; then
+    JVM_OPTIONS+="-XX:+UseConcMarkSweepGC "
   fi
 
-
+  if [[ ! -z "$GC_DETAILS" ]]; then
+    JVM_OPTIONS+="-XX:+PrintGCDetails -Xloggc:./tools/gc_${LAB_NAME}.log -Xlog:gc*:file=./tools/gc_${LAB_NAME}.log "
+  fi
 
   MAIN_CLASS="ar.com.javacuriosities.labs.$LAB_NAME.Main"
 

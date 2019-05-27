@@ -27,12 +27,15 @@ public class Worker implements Runnable {
     public void run() {
         long yieldCounter = 0;
         while (true) {
-            Collection<MapContent> myAllocSet = data.values();
-            for (MapContent c : myAllocSet) {
-                if (!data.containsKey(c.getId()))
+            Collection<MapContent> values = data.values();
+            for (MapContent c : values) {
+                if (!data.containsKey(c.getId())) {
                     System.out.println("Now this is strange!");
-                if (++yieldCounter % 1000 == 0)
+                }
+                if (++yieldCounter % 1000 == 0) {
                     Thread.yield();
+                }
+
             }
         }
     }
