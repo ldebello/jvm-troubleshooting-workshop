@@ -13,9 +13,10 @@ function usage() {
   echo "  -d            Heap Dump on OOM"
   echo "  -m            Maximum Metaspace"
   echo "  -t seconds    Timeout in seconds"
-  echo "  -s            Turn on safepoint info"
   echo "  -z            Avoid safepoint bias"
+  echo "  -s            Turn on safepoint info"
   echo "  -r            Turn on Flight Recorder"
+  echo "  -n            Turn on native memory info"
   echo "  -c            Trace Class Loading/Unloading"
   echo "  -o            Use Java 8 Default GC"
   echo "  -h            Display help"
@@ -23,7 +24,7 @@ function usage() {
 }
 
 function main() {
-  while getopts ":l:t:p:m: hrdszcog" opt
+  while getopts ":l:t:p:m: hrdszncog" opt
   do
     case $opt in
     h )
@@ -37,6 +38,9 @@ function main() {
       ;;
     o )
       DEFAULT_JAVA_8_GC="yes"
+      ;;
+    n )
+      NATIVE_MEMORY_INFO="yes"
       ;;
     g )
       GC_DETAILS="yes"
@@ -131,6 +135,10 @@ function main() {
 
   if [[ ! -z "$GC_DETAILS" ]]; then
     JVM_OPTIONS+="-XX:+PrintGCDetails -Xloggc:./tools/gc_${LAB_NAME}.log -Xlog:gc*:file=./tools/gc_${LAB_NAME}.log "
+  fi
+
+  if [[ ! -z "$NATIVE_MEMORY_INFO" ]]; then
+    JVM_OPTIONS+="-XX:NativeMemoryTracking=detail -XX:MaxDirectMemorySize=1024M "
   fi
 
   MAIN_CLASS="ar.com.javacuriosities.labs.$LAB_NAME.Main"

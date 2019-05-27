@@ -1,0 +1,24 @@
+= Native Memory
+
+En este laboratorio veremos como obtener información sobre la memoria nativa usada por nuestros procesos Java.
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -n -l native_memory
+----
+
+2) Listar los procesos Java
+
+[source,bash]
+----
+jcmd
+----
+
+3) Ejecutar VM.native_memory con jcmd
+
+[source,bash]
+----
+jcmd <PID> VM.native_memory
+----

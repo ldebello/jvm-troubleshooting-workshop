@@ -1,0 +1,13 @@
+= Native Memory
+
+* Native Memory Tracking nos permite ver distintas areas de memoria:
+** Java Heap: Muestra el espacio ocupado por el heap.
+** Class: Muestra el espacio asignado al Metaspace.
+** Thread: Muestra el espacio asignado a los stacks de nuestros threads.
+** Code: Muestra el espacio ocupado por el código compilado.
+** GC: Muestra el espacio utilizado por el GC esto puede variar en base al algoritmo utilizado.
+** Compiler: Muestra el espacio utilizado por el JIT Compiler.
+** Internal: Muestra el espacio asignado a cosas que no asignado en las otras categorías.
+** Symbol: Muestra el espacio utilizado por symbol tables de la JVM.
+** Native Memory Tracking: Muestra el espacio asignado al tracking.
+** Arena Chunk:

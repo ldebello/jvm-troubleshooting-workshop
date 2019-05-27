@@ -8,6 +8,7 @@ MAVEN='maven'
 
 JMC='jmc'
 TDA='tda'
+GC_VIEWER='gc_viewer'
 J_ENV='jenv'
 JVM_TOP='jvmtop'
 
@@ -118,13 +119,13 @@ function main () {
   mkdir -p $INSTALLATION_DIR
 
   if [[ `command -v brew` ]]; then
-    for dependency in $J_ENV $MAVEN $VISUAL_VM $MAT $ANT $JMC $TDA $JVM_TOP; do
+    for dependency in $J_ENV $MAVEN $VISUAL_VM $MAT $ANT $JMC $TDA $JVM_TOP $GC_VIEWER; do
       if [[ "$CHECK" == "YES" ]]; then
         check_installed_with_brew_cask $dependency
       elif [[ "$REMOVE" == "YES" ]]; then
         uninstall_with_brew_cask $dependency
       else
-        if [[ $dependency == "$JMC" ||  $dependency == "$TDA" ||  $dependency == "$JVM_TOP" ]]; then
+        if [[ $dependency == "$JMC" ||  $dependency == "$TDA" ||  $dependency == "$JVM_TOP" ||  $dependency == "$GC_VIEWER" ]]; then
           install_$dependency $dependency
         elif [[ $dependency == "$ANT" ||  $dependency == "$MAVEN" ||  $dependency == "$J_ENV" ]]; then
           install_with_brew ${dependency}
@@ -166,7 +167,7 @@ function install_tda() {
 
     echo "#!/bin/sh" >> ${INSTALLATION_DIR}/$1.sh
     echo "DIR=\$( cd \$(dirname \$0) ; pwd -P )" >> ${INSTALLATION_DIR}/$1.sh
-    echo "java -Xmx512m -jar \${DIR}/tda.jar" >> ${INSTALLATION_DIR}/$1.sh
+    echo "java -Xmx512m -jar \${DIR}/$1.jar" >> ${INSTALLATION_DIR}/$1.sh
 
     chmod 755 ${INSTALLATION_DIR}/$1.sh
   fi
@@ -186,6 +187,26 @@ function install_jvmtop() {
 
     mv ${INSTALLATION_DIR}/$1/target/jvmtop-0.9.0-SNAPSHOT/jvmtop.sh ${INSTALLATION_DIR}/jvmtop.sh
     mv ${INSTALLATION_DIR}/$1/target/jvmtop-0.9.0-SNAPSHOT/jvmtop.jar ${INSTALLATION_DIR}/jvmtop.jar
+
+    chmod 755 ${INSTALLATION_DIR}/$1.sh
+  fi
+}
+
+function install_gc_viewer() {
+  if [[ -d "${INSTALLATION_DIR}/$1" ]]; then
+    printAlreadyInstalled $1
+  else
+    rm -f $1*
+
+    git clone git@github.com:chewiebug/GCViewer.git ${INSTALLATION_DIR}/$1
+
+    mvn clean package -f ${INSTALLATION_DIR}/$1/pom.xml -DskipTests -DskipITs
+
+    mv ${INSTALLATION_DIR}/$1/target/*.jar ${INSTALLATION_DIR}/$1.jar
+
+    echo "#!/bin/sh" >> ${INSTALLATION_DIR}/$1.sh
+    echo "DIR=\$( cd \$(dirname \$0) ; pwd -P )" >> ${INSTALLATION_DIR}/$1.sh
+    echo "java -Xmx512m -jar \${DIR}/$1.jar" >> ${INSTALLATION_DIR}/$1.sh
 
     chmod 755 ${INSTALLATION_DIR}/$1.sh
   fi
