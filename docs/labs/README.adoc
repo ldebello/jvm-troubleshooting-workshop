@@ -15,6 +15,7 @@ Estos laboratorios nos ayudaran a entender de forma practicar las herramientas q
 * link:MultipleClassloaders.adoc[Lab 11 - Multiple Class loaders]
 * link:Exceptions.adoc[Lab 12 - Exceptions]
 * link:GC.adoc[Lab 13 - GC]
+* link:Safepoints.adoc[Lab 14 - Safepoints]
 
 *Nota*: Debemos ejecutar `./mvnw clean package`, antes de utilizar los laboratorios.
 

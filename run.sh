@@ -13,7 +13,8 @@ function usage() {
   echo "  -d            Heap Dump on OOM"
   echo "  -m            Maximum Metaspace"
   echo "  -t seconds    Timeout in seconds"
-  echo "  -s            Avoid Safepoint bias"
+  echo "  -s            Turn on safepoint info"
+  echo "  -z            Avoid safepoint bias"
   echo "  -r            Turn on Flight Recorder"
   echo "  -c            Trace Class Loading/Unloading"
   echo "  -o            Use Java 8 Default GC"
@@ -22,7 +23,7 @@ function usage() {
 }
 
 function main() {
-  while getopts ":l:t:p:m: hrdscog" opt
+  while getopts ":l:t:p:m: hrdszcog" opt
   do
     case $opt in
     h )
@@ -53,6 +54,9 @@ function main() {
       PROFILER_DURATION=$OPTARG
       ;;
     s )
+      SAFEPOINT_INFO="yes"
+      ;;
+    z )
       AVOID_SAFEPOINT_BIAS="yes"
       ;;
     t )
@@ -96,6 +100,13 @@ function main() {
     JVM_OPTIONS+="-XX:StartFlightRecording=duration=${PROFILER_DURATION}s$PATH_TO_GC_ROOT_OPTION,settings=profile,filename=./tools/recording_${LAB_NAME}.jfr "
 
     echo "Recording duration: ${PROFILER_DURATION}s"
+  fi
+
+
+  if [[ ! -z "$SAFEPOINT_INFO" ]]; then
+    # JVM_OPTIONS+="-XX:-UseBiasedLocking "
+    JVM_OPTIONS+="-XX:+PrintGCApplicationStoppedTime -XX:+PrintGCApplicationConcurrentTime "
+    # JVM_OPTIONS+="-XX:+PrintSafepointStatistics  -XX:PrintSafepointStatisticsCount=1 "
   fi
 
   if [[ ! -z "$AVOID_SAFEPOINT_BIAS" ]]; then

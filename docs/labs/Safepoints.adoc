@@ -1,0 +1,12 @@
+= Safepoints
+
+En este laboratorio veremos como los safepoints pueden degradar la performance de nuestra aplicación.
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -s -l biased_locks
+----
+
+2) Observer el output y notar el tiempo que involucra poder tener a los threads en un safepoint.

@@ -1,0 +1,24 @@
+= Safepoints
+
+Algunas tareas de la JVM necesitan que todos los threads ejecutando código Java sean suspendidos. Algunas de esas tareas son:
+
+* Garbage collection pauses (SWT)
+* Code deoptimization
+* Flushing code cache
+* Class redefinition (e.g. hot swap or instrumentation)
+* Biased lock revocation
+* Various debug operation (e.g. deadlock check or stacktrace dump)
+* Unloading of classes
+* Moving Objects around to fix memory defragmentation
+
+-XX:+PrintGCApplicationStoppedTime -XX:+PrintGCApplicationConcurrentTime
+
+== Safepoints Troubleshooting
+
+Normalmente no debemos preocuparnos, ya que suelen funcionar, pero algunos parámetros útiles para ver información acerca de esto son:
+
+* -XX:+PrintGCApplicationStoppedTime: Reporta el tiempo pausado por cualquier tipo de safepoint (Incluidos lo del GC)
+* -XX:+PrintSafepointStatistics –XX:PrintSafepointStatisticsCount=1: Estas dos opciones hacen que la JVM reporte la razón y el tiempo de los safepoints sin incluir el GC.
+
+
+
