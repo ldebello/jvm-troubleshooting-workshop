@@ -6,5 +6,17 @@ En este laboratorio veremos el impacto de las exceptions en nuestro proceso Java
 
 [source,bash]
 ----
-./run.sh -l exceptions
+./run.sh -r -l exceptions
 ----
+
+2) Iniciar JMC e iniciar una grabación pero indicando que haga tracing de todas las exceptions.
+
+3) Seleccionar el tab _Exceptions_ y ver las exceptions arrojadas. Algunas opciones útiles son `Store and Set As Focused Selection`.
+
+4) Una forma alternativa para ver las exceptions arrojadas por threads es en el tab _Java Application_ y hacer click en _Throwables_.
+
+== Preguntas
+
+1. ¿Cuantas exceptions fueron arrojadas?
+
+2. ¿Donde se originaron estas exceptions?

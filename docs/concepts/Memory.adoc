@@ -24,6 +24,7 @@
 ** Recursos nativos e.g. archivos
 ** Memoria alocada por código nativo e.g. JNI
 * OOM Típicos:
+** Unbounded caches
 ** Memory leak static Fields
 ** Unclosed Resources
 ** Improper equals() and hashCode() Implementations

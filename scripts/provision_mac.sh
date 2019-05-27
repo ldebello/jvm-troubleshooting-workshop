@@ -8,6 +8,7 @@ MAVEN='maven'
 
 JMC='jmc'
 TDA='tda'
+J_ENV='jenv'
 JVM_TOP='jvmtop'
 
 JMC_VERSION=b107
@@ -117,7 +118,7 @@ function main () {
   mkdir -p $INSTALLATION_DIR
 
   if [[ `command -v brew` ]]; then
-    for dependency in $MAVEN $VISUAL_VM $MAT $ANT $JMC $TDA $JVM_TOP; do
+    for dependency in $J_ENV $MAVEN $VISUAL_VM $MAT $ANT $JMC $TDA $JVM_TOP; do
       if [[ "$CHECK" == "YES" ]]; then
         check_installed_with_brew_cask $dependency
       elif [[ "$REMOVE" == "YES" ]]; then
@@ -125,7 +126,7 @@ function main () {
       else
         if [[ $dependency == "$JMC" ||  $dependency == "$TDA" ||  $dependency == "$JVM_TOP" ]]; then
           install_$dependency $dependency
-        elif [[ $dependency == "$ANT" ||  $dependency == "$MAVEN" ]]; then
+        elif [[ $dependency == "$ANT" ||  $dependency == "$MAVEN" ||  $dependency == "$J_ENV" ]]; then
           install_with_brew ${dependency}
         else
           install_with_brew_cask ${dependency}
