@@ -9,7 +9,7 @@ public class Worker implements Runnable {
     private static final int LOOP_COUNT = 60_000_000;
     private static final Random random = new Random();
 
-    private int id;
+    private final int id;
     private long totalTime;
     private int counter = 1;
 

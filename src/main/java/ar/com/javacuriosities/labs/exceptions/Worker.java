@@ -2,7 +2,7 @@ package ar.com.javacuriosities.labs.exceptions;
 
 public class Worker implements Runnable {
 
-    private int id;
+    private final int id;
     private long scaryCounter;
 
     public Worker(int id) {

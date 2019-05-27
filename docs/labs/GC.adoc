@@ -1,0 +1,10 @@
+= GC
+
+En este laboratorio veremos el impacto del garbage collector en nuestro proceso Java.
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -l gc
+----

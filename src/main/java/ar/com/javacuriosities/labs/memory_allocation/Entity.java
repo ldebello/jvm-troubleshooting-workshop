@@ -2,7 +2,7 @@ package ar.com.javacuriosities.labs.memory_allocation;
 
 public class Entity {
 
-    private int id;
+    private final int id;
 
     public Entity(int id) {
         this.id = id;
