@@ -1,6 +1,6 @@
 = Labs
 
-Estos laboratorios nos ayudaran a entender de forma practicar las herramientas que tenemos para analizar la JVM, asi como profundizar en algunos conceptos.
+Estos laboratorios nos ayudaran a entender de forma practica las herramientas que tenemos para analizar la JVM, asi como profundizar en algunos conceptos.
 
 * link:JDKTools.adoc[Lab 1 - JDK Tools]
 * link:Deadlock.adoc[Lab 2 - Deadlock]

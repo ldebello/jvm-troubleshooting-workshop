@@ -10,4 +10,4 @@
 ** Internal: Muestra el espacio asignado a cosas que no asignado en las otras categorías.
 ** Symbol: Muestra el espacio utilizado por symbol tables de la JVM.
 ** Native Memory Tracking: Muestra el espacio asignado al tracking.
-** Arena Chunk:
+** Arena Chunk

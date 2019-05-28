@@ -30,7 +30,7 @@ jstack -l <PID>
 jstat -class <PID> 1000 5
 ----
 
-5) Imprimir heap
+5) Imprimir información acerca del heap
 
 [source,bash]
 ----

@@ -24,6 +24,7 @@
 * GC Duration vs GC Pause Duration
 ** GC Duration: Es la duración total incluye el tiempo de las fases STW y concurrentes.
 ** GC Pause Duration: Es la duración de las fases STW.
+** Java 12 -> https://openjdk.java.net/projects/shenandoah/[Shenandoah]
 
 image::../images/GC.png[]
 

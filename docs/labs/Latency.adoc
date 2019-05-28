@@ -24,7 +24,7 @@ Esperar a que termine el proceso y ver los valores `"Total number of requests"` 
 
 1. ¿Qué clase/método utiliza locks?
 
-2. ¿Qué podríamos mejorar nuestra aplicación?
+2. ¿Qué podríamos mejorar en nuestra aplicación?
 
 3. ¿Qué sucede luego del primer _fix_?
 
