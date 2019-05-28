@@ -9,8 +9,6 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Direct allocation: " + humonguosBuffer.capacity());
-        System.out.println("Native memory used: " + sun.misc.SharedSecrets.getJavaNioAccess().getDirectBufferPool().getMemoryUsed());
-        System.out.println("Max direct memory: " + sun.misc.VM.maxDirectMemory());
         Utils.waitForUser();
     }
 }

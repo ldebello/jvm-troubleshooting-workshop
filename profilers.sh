@@ -47,7 +47,7 @@ function main() {
   done
 
   if [[ -z "$LAB_NAME" ]]; then
-    echo "Lab name is necessary" >&2
+    echo "Lab name is mandatory" >&2
     usage
   fi
 
@@ -87,10 +87,13 @@ function main() {
     JFR_SCRIPTS="${TOOLS_DIRECTORY}/jfr-flame-graph/build/install/jfr-flame-graph/bin"
 
     # Preparing JVM parameters
-    JVM_PARAMETERS="-XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+UnlockCommercialFeatures -XX:+FlightRecorder"
+    JVM_PARAMETERS="-XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+FlightRecorder"
 
     # Configure flame-graph path
     export FLAMEGRAPH_DIR="${TOOLS_DIRECTORY}/FlameGraph"
+
+    # Clean up
+    cd ..
   fi
 
   if [[ "$PROFILER" = "honest_profiler" ]]; then
@@ -292,7 +295,7 @@ function main() {
   fi  
 
   if [[ "$PROFILER" = "jfr" ]]; then
-    jcmd ${JAVA_PID} JFR.start settings=${CURRENT_DIRECTORY}/custom-profiling.jfc name=${LAB_NAME}_recording filename=${TOOLS_DIRECTORY}/${LAB_NAME}.jfr dumponexit=true
+    jcmd ${JAVA_PID} JFR.start settings=${CURRENT_DIRECTORY}/scripts/custom-profiling.jfc name=${LAB_NAME}_recording filename=${TOOLS_DIRECTORY}/${LAB_NAME}.jfr dumponexit=true
 
     # Waiting until java process finish
     while ps -p ${JAVA_PID} &>/dev/null; do
