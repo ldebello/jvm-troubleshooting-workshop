@@ -44,6 +44,7 @@ function main() {
       NATIVE_MEMORY_INFO="yes"
       ;;
     j )
+      UNLOCK_COMMERCIAL_FEATURES="yes"
       JIT_COMPILER_INFO="yes"
       ;;
     g )
@@ -65,6 +66,7 @@ function main() {
       SAFEPOINT_INFO="yes"
       ;;
     z )
+      UNLOCK_COMMERCIAL_FEATURES="yes"
       AVOID_SAFEPOINT_BIAS="yes"
       ;;
     t )
@@ -95,6 +97,10 @@ function main() {
     usage
   fi
 
+  if [[ ! -z "$UNLOCK_COMMERCIAL_FEATURES" ]]; then
+    JVM_OPTIONS+="-XX:+UnlockDiagnosticVMOptions "
+  fi
+
   if [[ ! -z "$RECORDING" ]]; then
     JVM_OPTIONS="-XX:+FlightRecorder "
   fi
@@ -110,7 +116,6 @@ function main() {
     echo "Recording duration: ${PROFILER_DURATION}s"
   fi
 
-
   if [[ ! -z "$SAFEPOINT_INFO" ]]; then
     # JVM_OPTIONS+="-XX:-UseBiasedLocking "
     JVM_OPTIONS+="-XX:+PrintGCApplicationStoppedTime -XX:+PrintGCApplicationConcurrentTime "
@@ -118,7 +123,7 @@ function main() {
   fi
 
   if [[ ! -z "$AVOID_SAFEPOINT_BIAS" ]]; then
-    JVM_OPTIONS+="-XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints "
+    JVM_OPTIONS+="-XX:+DebugNonSafepoints "
   fi
 
   if [[ ! -z "$HEAP_DUMP_ON_OOM" ]]; then
@@ -146,7 +151,7 @@ function main() {
   fi
 
   if [[ ! -z "$JIT_COMPILER_INFO" ]]; then
-    JVM_OPTIONS+="-XX:+PrintAssembly -XX:+PrintCompilation -XX:+LogCompilation"
+    JVM_OPTIONS+="-XX:+PrintAssembly -XX:+PrintCompilation -XX:+LogCompilation -XX:+PrintInlining -XX:CompileOnly=ar/com/javacuriosities/labs/$LAB_NAME "
   fi
 
   MAIN_CLASS="ar.com.javacuriosities.labs.$LAB_NAME.Main"

@@ -1,0 +1,25 @@
+= JIT (Just In Time) Compiler
+
+En este laboratorio veremos algunas optimizaciones realizadas por el JIT Compiler.
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -t 120 -j -l jit
+----
+
+2) Dejar ejecutar el programa y luego abrir el log de compilaciones con JITWatch
+
+[source,bash]
+----
+./tools/jitwatch.sh
+----
+
+== Preguntas
+
+1. ¿Qué compilaciones vemos?
+
+2. ¿Cual es el tiempo de compilación?
+
+3. ¿Cual es el `Largest Bytecode Methods`?

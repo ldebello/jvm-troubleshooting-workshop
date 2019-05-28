@@ -23,6 +23,7 @@ lib/
 # Scripts
 *.histo
 *.jstacks
+*.log
 scripts/outputs/
 
 # Tools
