@@ -10,6 +10,7 @@ function usage() {
   echo "  -l name       Lab name"
   echo "  -p [seconds]  Profile (Default ${DEFAULT_PROFILER_DURATION}s)"
   echo "  -g            GC Details"
+  echo "  -j            Turn on JIT logs"
   echo "  -d            Heap Dump on OOM"
   echo "  -m            Maximum Metaspace"
   echo "  -t seconds    Timeout in seconds"
@@ -24,7 +25,7 @@ function usage() {
 }
 
 function main() {
-  while getopts ":l:t:p:m: hrdszncog" opt
+  while getopts ":l:t:p:m: hrdszncogj" opt
   do
     case $opt in
     h )
@@ -41,6 +42,9 @@ function main() {
       ;;
     n )
       NATIVE_MEMORY_INFO="yes"
+      ;;
+    j )
+      JIT_COMPILER_INFO="yes"
       ;;
     g )
       GC_DETAILS="yes"
@@ -139,6 +143,10 @@ function main() {
 
   if [[ ! -z "$NATIVE_MEMORY_INFO" ]]; then
     JVM_OPTIONS+="-XX:NativeMemoryTracking=detail -XX:MaxDirectMemorySize=1024M "
+  fi
+
+  if [[ ! -z "$JIT_COMPILER_INFO" ]]; then
+    JVM_OPTIONS+="-XX:+PrintAssembly -XX:+PrintCompilation -XX:+LogCompilation"
   fi
 
   MAIN_CLASS="ar.com.javacuriosities.labs.$LAB_NAME.Main"
