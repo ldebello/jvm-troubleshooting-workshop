@@ -27,5 +27,5 @@ Podemos ejecutar el siguiente bash script para ir probando distintas formas de h
 
 [source,bash]
 ----
-./profilers.sh -t 60 -l hot_methods -p jstack
+./profilers.sh -t 60 -l <Lab Name> -p <Profiler>
 ----

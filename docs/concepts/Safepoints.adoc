@@ -11,13 +11,12 @@ Algunas tareas de la JVM necesitan que todos los threads ejecutando código Java
 * Unloading of classes
 * Moving Objects around to fix memory defragmentation
 
--XX:+PrintGCApplicationStoppedTime -XX:+PrintGCApplicationConcurrentTime
-
 == Safepoints Troubleshooting
 
 Normalmente no debemos preocuparnos, ya que suelen funcionar, pero algunos parámetros útiles para ver información acerca de esto son:
 
-* -XX:+PrintGCApplicationStoppedTime: Reporta el tiempo pausado por cualquier tipo de safepoint (Incluidos lo del GC)
+* -XX:+PrintGCApplicationConcurrentTime: Reporta el tiempo no pausado entre dos safepoints.
+* -XX:+PrintGCApplicationStoppedTime: Reporta el tiempo pausado por cualquier tipo de safepoint (Incluidos lo del GC).
 * -XX:+PrintSafepointStatistics –XX:PrintSafepointStatisticsCount=1: Estas dos opciones hacen que la JVM reporte la razón y el tiempo de los safepoints sin incluir el GC.
 
 

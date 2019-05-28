@@ -28,6 +28,7 @@ image::../images/ShallowAndRetainedHeap.png[]
 * *Shallow heap*: Es la memoria consumida por un objeto.
 * *Retained set*: El `Retained set` de X, es el conjunto de objetos que sera removido por el GC cuando X sea recolectado.
 * *Retained heap*: El `Retained heap` de X, es la sumatoria de los `shallow sizes` de todos los objetos en el `Retained set` de X.
+* *Deep size*: El `Deep size` es la sumatoria de los `shallow sizes` incluso aquellos que sean compartidos.
 
 == Histogram
 
