@@ -1,0 +1,31 @@
+= Profilers
+
+Existen distintos tipos de profiler.
+
+* CPU profiling: Focalizado en la frecuencia y el tiempo de la ejecución de un método. Estos profilers utilizan una estrategia de _Sampling_ o _Instrumentation_.
+** Sampling
+*** Pros: Low overhead, suitable for production use.
+*** cons: Can be inaccurate.
+** Instrumentation
+*** Pros: Very accurate.
+*** cons: Introduce overhead, can prevent some bytecode optimizations.
+* Memory profiling: Focalizado en el uso de la memoria y la cantidad de memoria libre.
+** Memory Usage.
+** Memory allocation Stack trace.
+** Cantidad y tipo de GC events.
+** Tiempo insumido por GC pauses.
+** Cantidad de memoria liberada por el GC.
+* Thread profiling: Focalizado en entender el estado de los threads y porque están en ese estado.
+** Concurrency
+** Tiempo consumido en cada estado
+** Lock contention
+* IO profiling: Focalizado en IO.
+* Latency: La cantidad de tiempo requerida para completar algo.
+* Throughput: Cantidad de trabajo que puede completarse en una unidad de tiempo.
+
+Podemos ejecutar el siguiente bash script para ir probando distintas formas de hacer profiling.
+
+[source,bash]
+----
+./profilers.sh -t 60 -l hot_methods -p jstack
+----

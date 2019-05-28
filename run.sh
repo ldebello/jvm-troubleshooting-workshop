@@ -156,7 +156,7 @@ function main() {
 
   MAIN_CLASS="ar.com.javacuriosities.labs.$LAB_NAME.Main"
 
-  java ${JVM_OPTIONS} -cp target/$JAR $MAIN_CLASS "$@"
+  java ${JVM_OPTIONS} -cp target/${JAR} ${MAIN_CLASS} "$@"
 }
 
 main "$@"

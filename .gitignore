@@ -21,9 +21,10 @@ target/
 lib/
 
 # Scripts
+*.out
+*.log
 *.histo
 *.jstacks
-*.log
 scripts/outputs/
 
 # Tools
