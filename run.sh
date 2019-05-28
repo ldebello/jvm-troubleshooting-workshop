@@ -16,16 +16,17 @@ function usage() {
   echo "  -t seconds    Timeout in seconds"
   echo "  -z            Avoid safepoint bias"
   echo "  -s            Turn on safepoint info"
-  echo "  -r            Turn on Flight Recorder"
+  echo "  -r            Turn on flight recorder"
+  echo "  -f            Turn on file leak detector"
   echo "  -n            Turn on native memory info"
-  echo "  -c            Trace Class Loading/Unloading"
+  echo "  -c            Trace class loading/unloading"
   echo "  -o            Use Java 8 Default GC"
   echo "  -h            Display help"
   exit 1
 }
 
 function main() {
-  while getopts ":l:t:p:m: hrdszncogj" opt
+  while getopts ":l:t:p:m: hrdszncofgj" opt
   do
     case $opt in
     h )
@@ -42,6 +43,9 @@ function main() {
       ;;
     n )
       NATIVE_MEMORY_INFO="yes"
+      ;;
+    f )
+      FILE_LEAK_DETECTOR="yes"
       ;;
     j )
       UNLOCK_COMMERCIAL_FEATURES="yes"
@@ -103,6 +107,10 @@ function main() {
 
   if [[ ! -z "$RECORDING" ]]; then
     JVM_OPTIONS="-XX:+FlightRecorder "
+  fi
+
+  if [[ ! -z "$FILE_LEAK_DETECTOR" ]]; then
+    JVM_OPTIONS="-javaagent:./tools/file_leak_detector.jar=http=9876 "
   fi
 
   if [[ ! -z "$PATH_TO_GC_ROOT" ]]; then

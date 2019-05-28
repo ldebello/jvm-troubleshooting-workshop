@@ -15,9 +15,10 @@ Estos laboratorios nos ayudaran a entender de forma practicar las herramientas q
 * link:MultipleClassloaders.adoc[Lab 11 - Multiple Class loaders]
 * link:Exceptions.adoc[Lab 12 - Exceptions]
 * link:GC.adoc[Lab 13 - GC]
-* link:JITCompiler.adoc[Lab 14 - JIT Compiler]
-* link:NativeMemory.adoc[Lab 15 - Native Memory]
-* link:Safepoints.adoc[Lab 16 - Safepoints]
+* link:FileLeak.adoc[Lab 14 - File Leak]
+* link:JITCompiler.adoc[Lab 15 - JIT Compiler]
+* link:NativeMemory.adoc[Lab 16 - Native Memory]
+* link:Safepoints.adoc[Lab 17 - Safepoints]
 
 *Nota*: Debemos ejecutar `./mvnw clean package`, antes de utilizar los laboratorios.
 

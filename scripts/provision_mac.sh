@@ -12,6 +12,7 @@ GC_VIEWER='gc_viewer'
 JIT_WATCH='jitwatch'
 J_ENV='jenv'
 JVM_TOP='jvmtop'
+FILE_LEAK_DETECTOR='file_leak_detector'
 
 JMC_VERSION=b107
 
@@ -120,13 +121,13 @@ function main () {
   mkdir -p $INSTALLATION_DIR
 
   if [[ `command -v brew` ]]; then
-    for dependency in $J_ENV $MAVEN $VISUAL_VM $MAT $ANT $JMC $TDA $JVM_TOP $GC_VIEWER $JIT_WATCH; do
+    for dependency in $J_ENV $MAVEN $VISUAL_VM $MAT $ANT $JMC $TDA $JVM_TOP $GC_VIEWER $JIT_WATCH $FILE_LEAK_DETECTOR; do
       if [[ "$CHECK" == "YES" ]]; then
         check_installed_with_brew_cask $dependency
       elif [[ "$REMOVE" == "YES" ]]; then
         uninstall_with_brew_cask $dependency
       else
-        if [[ $dependency == "$JMC" ||  $dependency == "$TDA" ||  $dependency == "$JVM_TOP" ||  $dependency == "$GC_VIEWER" ||  $dependency == "$JIT_WATCH" ]]; then
+        if [[ $dependency == "$JMC" ||  $dependency == "$TDA" ||  $dependency == "$JVM_TOP" ||  $dependency == "$GC_VIEWER" ||  $dependency == "$JIT_WATCH" ||  $dependency == "$FILE_LEAK_DETECTOR" ]]; then
           install_$dependency $dependency
         elif [[ $dependency == "$ANT" ||  $dependency == "$MAVEN" ||  $dependency == "$J_ENV" ]]; then
           install_with_brew ${dependency}
@@ -229,6 +230,20 @@ function install_jitwatch() {
     echo "./launchUI.sh" >> ${INSTALLATION_DIR}/$1.sh
 
     chmod 755 ${INSTALLATION_DIR}/$1.sh
+  fi
+}
+
+function install_file_leak_detector() {
+  if [[ -d "${INSTALLATION_DIR}/$1" ]]; then
+    printAlreadyInstalled $1
+  else
+    rm -f $1*
+
+    git clone git@github.com:kohsuke/file-leak-detector.git ${INSTALLATION_DIR}/$1
+
+    mvn clean package -f ${INSTALLATION_DIR}/$1/pom.xml -DskipTests -DskipITs
+
+    mv ${INSTALLATION_DIR}/$1/target/file-leak-detector-*-SNAPSHOT-jar-with-dependencies.jar ${INSTALLATION_DIR}/$1.jar
   fi
 }
 

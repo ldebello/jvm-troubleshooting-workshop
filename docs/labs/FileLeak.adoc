@@ -1,0 +1,12 @@
+= File Leak
+
+En este laboratorio veremos como identificar los recursos que no estamos liberando.
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -f -l file_leak
+----
+
+2) Abrir un browser y navegar a `http://localhost:9876/`
