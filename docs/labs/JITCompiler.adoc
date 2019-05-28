@@ -23,3 +23,5 @@ En este laboratorio veremos algunas optimizaciones realizadas por el JIT Compile
 2. ¿Cual es el tiempo de compilación?
 
 3. ¿Cual es el `Largest Bytecode Methods`?
+
+4. ¿Cual es el estado de la `Code Cache`?
