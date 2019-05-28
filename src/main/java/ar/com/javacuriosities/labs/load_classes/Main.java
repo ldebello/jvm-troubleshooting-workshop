@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         Utils.start(args);
 
-        File resources = new File("classes.jar");
+        File resources = new File("resources/classes.jar");
 
         while (true) {
             try {
