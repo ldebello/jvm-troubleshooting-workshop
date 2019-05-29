@@ -23,7 +23,9 @@ jps -l
 jstack -l <PID>
 ----
 
-4) Analizar Thread Dump con TDA (Thread Dump Analyzer)
+4) Ir a https://fastthread.io/[Fast Thread] y subir el thread dump.
+
+5) Analizar Thread Dump con TDA (Thread Dump Analyzer)
 
 [source,bash]
 ----
