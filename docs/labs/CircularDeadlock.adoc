@@ -1,0 +1,28 @@
+= Circular Deadlock
+
+En este laboratorio veremos un circular deadlock o circular wait
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -l circular_deadlock
+----
+
+2) Listar los procesos Java
+
+[source,bash]
+----
+jps -l
+----
+
+3) Mostrar hilos en ejecución
+
+[source,bash]
+----
+jstack -l <PID>
+----
+
+== Preguntas
+
+1. ¿Cual es la forma de solucionar un circular wait?
