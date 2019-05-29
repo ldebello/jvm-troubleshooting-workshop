@@ -1,5 +1,6 @@
 = Native Memory
 
+* NMT (Native Memory Tracking) tiene entre 5/10% de overhead.
 * Native Memory Tracking nos permite ver distintas areas de memoria:
 ** Java Heap: Muestra el espacio ocupado por el heap.
 ** Class: Muestra el espacio asignado al Metaspace.

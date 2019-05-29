@@ -16,7 +16,9 @@ En este laboratorio veremos como obtener información sobre la memoria nativa us
 jcmd
 ----
 
-3) Ejecutar VM.native_memory con jcmd
+3) Abrir VisualVM y ver el tab _Buffer Pools_
+
+4) Ejecutar VM.native_memory con jcmd
 
 [source,bash]
 ----

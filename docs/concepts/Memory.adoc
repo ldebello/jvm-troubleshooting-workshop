@@ -1,5 +1,7 @@
 = Memory
 
+* Memory Usage: Heap + Non-Heap
+** Non-Heap: MetaSpace + (Numbers of Threads x Stack Size) + Direct Buffers + Mapped Files (Libraries and Jars)
 * Memory Pools
 ** PS Eden Space (Heap)
 ** PS Survivor Space (Heap)

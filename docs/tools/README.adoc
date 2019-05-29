@@ -70,6 +70,7 @@ Además hay herramientas adicionales que pueden ser de utilidad.
   * KillApplication
   * VisualGC
   * Threads Inspector
+  * VisualVM-MBeans
   * VisualVM-Buffer Monitor
   * OQL Syntax Support
   * Tracer-*
