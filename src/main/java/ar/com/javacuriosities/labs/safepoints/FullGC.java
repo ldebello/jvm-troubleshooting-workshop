@@ -4,13 +4,16 @@ package ar.com.javacuriosities.labs.safepoints;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Ejecutar este ejemplo con los siguientes parámetros
+ * -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDetails
+ *
+ * Vamos a notar que todos los SWT coinciden con GC pauses.
+ */
 public class FullGC {
 
     private static final Collection<Object> leak = new ArrayList<>();
     private static volatile Object sink;
-
-    // Run with: -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDetails
-    // Notice that all the stop the world pauses coincide with GC pauses
 
     public static void main(String[] args) {
         while (true) {
