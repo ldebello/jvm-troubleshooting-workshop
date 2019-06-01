@@ -29,3 +29,16 @@ jstack -l <PID>
 ----
 ./tools/tda.sh
 ----
+
+
+== Preguntas
+
+1. ¿Que threads están en deadlock?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+TransferTask-1 y TransferTask-2
+----
++++ </div></details> +++
