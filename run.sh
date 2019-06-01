@@ -129,6 +129,7 @@ function main() {
     # JVM_OPTIONS+="-XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDetails "
     JVM_OPTIONS+="-XX:+PrintSafepointStatistics -XX:PrintSafepointStatisticsCount=1 "
     # JVM_OPTIONS+="-XX:-UseBiasedLocking "
+    # JVM_OPTIONS+="-XX:+UseCountedLoopSafepoints "
   fi
 
   if [[ ! -z "$AVOID_SAFEPOINT_BIAS" ]]; then
