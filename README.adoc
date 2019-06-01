@@ -6,7 +6,7 @@ Generalmente estos problemas se pueden asociar a:
 
 * Threading (Slowness, Deadlocks)
 * Memory Usage (Slowness, OOM)
-* Classloader (Weird exception)
+* Classloader (Weird exceptions)
 * Garbage Collector (Slowness)
 * JIT Compiler (Slowness)
 

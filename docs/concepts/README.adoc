@@ -4,8 +4,8 @@ Es indispensable que veamos algunos conceptos necesarios para poder resolver los
 no es tener una lista muy extensiva pero algunas cosas básicas.
 
 * link:Memory.adoc[Memory]
-* link:Threading.adoc[Threading]
 * link:Profilers.adoc[Profilers]
+* link:Threading.adoc[Threading]
 * link:Safepoints.adoc[Safepoints]
 * link:Classloading.adoc[Classloading]
 * link:NativeMemory.adoc[Native Memory]
