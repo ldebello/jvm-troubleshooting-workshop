@@ -23,13 +23,12 @@ jps -l
 jstack -l <PID>
 ----
 
-4) Analizar Thread Dump con TDA (Thread Dump Analyzer)
+4) Analizar Thread Dump con TDA (Thread Dump Analyzer). Una vista util es la de _Monitors_.
 
 [source,bash]
 ----
 ./tools/tda.sh
 ----
-
 
 == Preguntas
 
