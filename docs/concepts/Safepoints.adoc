@@ -1,7 +1,7 @@
 = Safepoints
 
 Algunos tipos de eventos puede ocasionar que la JVM detenga todos los application threads.
-Estas pausas son llamadas Stop-The-World (STW) pauses, generalmente vemos esto asociado al GC, pero distintos motivos pueden ocasionar esto.:
+Estas pausas son llamadas Stop-The-World (STW) pauses, generalmente vemos esto asociado al GC, pero distintos motivos pueden ocasionar esto:
 
 * GC pauses
 * GetAllStackTrace
@@ -29,7 +29,7 @@ El http://openjdk.java.net/groups/hotspot/docs/HotSpotGlossary.html[HotSpotGloss
 * Safepoint triggers/operations: Razón por la cual se solicita hacer un STW, pero la operación solo puede empezar cuando todos estén ahi.
 * Safepoint poll: Punto donde los thread verifican si tienen que entrar a un safepoint si es necesario.
 ** Entre cada 2 lineas de bytecode mientras la ejecución sea interpretada.
-** En `non-counted loop back edge` para el código compilado por C1/C2.
+** En `non-counted loop back edge` para el código compilado por C1/C2. Si el loop es un `counted loop` no se agrega un safepoint en su ejecución ya que se asume que va a ser rápido.
 ** En Method entry/exit (entry para Zing, exit para OpenJDK) para el código compilado por C1/C2. Estos safepoints son eliminados si el código es inlined.
 
 Veamos un ejemplo, de un profiler haciendo sampling usando JVMTI::GetStackTrace
