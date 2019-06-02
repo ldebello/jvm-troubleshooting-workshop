@@ -14,7 +14,7 @@ function usage() {
   echo "Script to labs using a specific profiler"
   echo " -l name      Lab name"
   echo " -t seconds   Timeout in seconds (Default ${DEFAULT_TIMEOUT}s)"
-  echo " -p           Profile with (jstack - jfr - honest_profiler - async_profiler - dtrace - perf)"
+  echo " -p           Profile with (jstack - honest_profiler - async_profiler - dtrace - perf)"
   exit 1
 }
 
