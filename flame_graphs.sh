@@ -11,10 +11,10 @@ JAR="JVMTroubleshootingWorkshop-1.0.0-SNAPSHOT.jar"
 DEFAULT_TIMEOUT=60
 
 function usage() {
-  echo "Script to labs using a specific profiler"
+  echo "Script to generate flame graphs from different sources"
   echo " -l name      Lab name"
   echo " -t seconds   Timeout in seconds (Default ${DEFAULT_TIMEOUT}s)"
-  echo " -p           Profile with (jstack - honest_profiler - async_profiler - dtrace - perf)"
+  echo " -p           Profile with (jstack - jfr - honest_profiler - async_profiler - dtrace - perf)"
   exit 1
 }
 
@@ -191,6 +191,8 @@ function main() {
     LIB_AGENT_NAME=libasyncProfiler.so
 
     JVM_PARAMETERS="-agentpath:$TOOLS_DIRECTORY/async-profiler/$LIB_AGENT_NAME=start,svg,file=$TOOLS_DIRECTORY/${LAB_NAME}-async.svg"
+
+    cd ..
   fi
 
   if [[ "$PROFILER" = "dtrace" ]]; then
