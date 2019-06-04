@@ -12,6 +12,9 @@
 ** Code Cache (Non Heap): Se almacena el código compilado por el JIT (Just In Time) compiler. Memoria nativa controlada por el Code Cache Sweeper. Desde Java9+ el Code Cache esta divido en 3 areas: JVM internal code, Profiled (lightly optimized) code, Non-profiled (fully optimized) code.
 * Young vs Old Generation: El Young generation esta formado por el Eden Space y los Survivor Space. El Old es simplemente el Old Gen.
 * OOM: Cuando la JVM se queda sin memoria en alguna de sus areas
+* Memory Allocation
+** Bump the pointer: Esta técnica recuerda la posición del ultimo objeto en el eden space y si hay algún objeto nuevo solo calcula el size y lo posiciona siguiente. Esta técnica no es tan util si tenemos multiples threads, ya que requeriríamos un lock.
+** Thread-Local Allocation Buffers (TLABs): Esta técnica permite a cada thread tener una pequeña porción del eden space, cada thread solo puede acceder a su propio TLAB.
 * Memory Access (https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html[Latency]):
 ** L1i/L1d (32/32 KB): ~1 ns
 ** L2 (256 KB – 2 MB): ~4 ns

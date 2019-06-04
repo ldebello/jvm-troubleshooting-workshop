@@ -8,6 +8,7 @@
 * Premisas básicas:
 ** La mayoría de los objetos mueren jóvenes.
 ** Pocas referencias desde old objects to young objects.
+** Si un objeto de la old generation referencia a uno de la young generation, esto se almacena en algo llamado `card table`, cuando el GC es invocado en la young generation revisa esta tabla.
 * Minor vs Major GC: El minor GC solo afecta al Young Generation, Major GC limpiar ambas areas.
 * El GC mantiene referencias a los GC Root (Root Set) para ver que objetos son alcanzables (Reachable objects).
 * Dependiendo el area podemos seleccionar un algoritmo especifico.
