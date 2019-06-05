@@ -66,6 +66,6 @@ jcmd <PID> JFR.check
 
 == Preguntas
 
-1. ¿Qué clase/método está consumiendo más recursos?
+1) ¿Qué clase/método está consumiendo más recursos?
 
-2. ¿Qué podríamos mejorar nuestra aplicación?
+2) ¿Qué podríamos mejorar nuestra aplicación?

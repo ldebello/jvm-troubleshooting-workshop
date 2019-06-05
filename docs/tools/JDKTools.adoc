@@ -54,9 +54,24 @@ Permite hacer monitoring de algunas cosas especificas, i.e. class, compiler, gc
 
 Parámetros:
 
--options Nos permite listar sobre que podemos hacer monitoring.
+-options Nos permite listar sobre que podemos hacer monitoring, algunos valores posibles son:
+
+* -class
+** Loaded: Numero de clases cargadas.
+** Bytes: Numero de kilobytes cargados.
+** Unloaded: Numero de clases descargadas.
+** Bytes: Numero de kilobytes descargados
+** Time: Tiempo consumido en loading y unloading clases.
+* -compiler
+** Compiled: Numero de tareas de compilación ejecutadas.
+** Failed: Numero de tareas de compilación falladas.
+** Invalid: Numero de tareas de compilación que fueron invalidadas.
+** Time: Tiempo consumido en tareas de compilación.
+** FailedType: Tipo de compilación de la ultima compilación fallida.
+** FailedMethod: Nombre de método y clase de la ultima compilación fallida.
 
 -<option> <VMID> <interval> <count> Permite hacer monitoring de la opción especificada cada cierto intervalo y un numero finito de ejecuciones.
+
 
 == jcmd
 

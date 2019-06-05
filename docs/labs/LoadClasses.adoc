@@ -15,4 +15,4 @@ Ir al tab _Memory_ y ver el chart de `Metaspace`, dejar ejecutando el programa a
 
 == Preguntas
 
-1. ¿Que patron de uso de memoria vemos?
+1) ¿Que patron de uso de memoria vemos?

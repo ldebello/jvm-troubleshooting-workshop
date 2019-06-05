@@ -28,10 +28,10 @@ En este laboratorio veremos como obtener información sobre el garbage collector
 
 == Preguntas
 
-1. ¿Que tipo de allocations vemos?
+1) ¿Que tipo de allocations vemos?
 
-2. ¿Qué clases se instancian más? ¿Donde? ¿Por qué?
+2) ¿Qué clases se instancian más? ¿Donde? ¿Por qué?
 
-3. ¿Como podemos arreglar nuestro programa sin modificar la idea del programa?
+3) ¿Como podemos arreglar nuestro programa sin modificar la idea del programa?
 
-4. ¿Que Throughput tenemos?
+4) ¿Que Throughput tenemos?

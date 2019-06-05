@@ -17,6 +17,6 @@ En este laboratorio veremos el impacto de las exceptions en nuestro proceso Java
 
 == Preguntas
 
-1. ¿Cuantas exceptions fueron arrojadas?
+1) ¿Cuantas exceptions fueron arrojadas?
 
-2. ¿Donde se originaron estas exceptions?
+2) ¿Donde se originaron estas exceptions?

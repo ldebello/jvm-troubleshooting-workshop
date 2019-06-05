@@ -1,6 +1,6 @@
 = Hidden Deadlock
 
-En este laboratorio veremos un deadlock que no es detectado por la JVM.
+En este laboratorio veremos un deadlock un poco mas complejo.
 
 1) Abrir una terminal y ejecutar
 

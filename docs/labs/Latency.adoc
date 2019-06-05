@@ -22,18 +22,18 @@ Esperar a que termine el proceso y ver los valores `"Total number of requests"` 
 
 == Preguntas
 
-1. ¿Qué clase/método utiliza locks?
+1) ¿Qué clase/método utiliza locks?
 
-2. ¿Qué podríamos mejorar en nuestra aplicación?
+2) ¿Qué podríamos mejorar en nuestra aplicación?
 
-3. ¿Qué sucede luego del primer _fix_?
+3) ¿Qué sucede luego del primer _fix_?
 
-4. ¿Qué sucede si decrementamos el _SHARED_RESOURCE_TIME_ de 200 a 20?
+4) ¿Qué sucede si decrementamos el _SHARED_RESOURCE_TIME_ de 200 a 20?
 
-5. ¿Qué sucede si incrementados el _NUMBER_OF_THREADS_ de 10 a 20?
+5) ¿Qué sucede si incrementados el _NUMBER_OF_THREADS_ de 10 a 20?
 
-6. ¿Qué sucede si decrementamos el _NUMBER_OF_THREADS_ de 10 a 5?
+6) ¿Qué sucede si decrementamos el _NUMBER_OF_THREADS_ de 10 a 5?
 
-7. ¿Qué sucede si incrementados el _WORKER_THREADS_ de 2 a 4?
+7) ¿Qué sucede si incrementados el _WORKER_THREADS_ de 2 a 4?
 
-8. ¿Qué sucede si decrementamos el _QUERY_EXECUTION_TIME_ de 400 a 200?
+8) ¿Qué sucede si decrementamos el _QUERY_EXECUTION_TIME_ de 400 a 200?

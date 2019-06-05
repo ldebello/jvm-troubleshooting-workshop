@@ -45,4 +45,4 @@ Luego Abrir el `Heap Dump` con MAT (Memory Analyzer Thread).
 
 == Preguntas
 
-1. ¿Qué clases se instancian más? ¿Donde? ¿Por qué?
+1) ¿Qué clases se instancian más? ¿Donde? ¿Por qué?

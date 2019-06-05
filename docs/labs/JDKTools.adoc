@@ -61,3 +61,15 @@ jcmd <PID> VM.classloader_stats
 jcmd <PID> GC.heap_dump <FILE_NAME>
 jcmd <PID> GC.class_histogram
 ----
+
+== Preguntas
+
+1) ¿Cual es la herramienta recomendada?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+jcmd, ya que incluye las funcionalidades de las demas.
+----
++++ </div></details> +++

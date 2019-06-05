@@ -18,10 +18,10 @@ En este laboratorio veremos algunas optimizaciones realizadas por el JIT Compile
 
 == Preguntas
 
-1. ¿Qué compilaciones vemos?
+1) ¿Qué compilaciones vemos?
 
-2. ¿Cual es el tiempo de compilación?
+2) ¿Cual es el tiempo de compilación?
 
-3. ¿Cual es el `Largest Bytecode Methods`?
+3) ¿Cual es el `Largest Bytecode Methods`?
 
-4. ¿Cual es el estado de la `Code Cache`?
+4) ¿Cual es el estado de la `Code Cache`?

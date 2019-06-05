@@ -32,8 +32,8 @@ jstack -l <PID> > thread_dump_after.jstack
 
 == Preguntas
 
-1. ¿Que diferencia vemos entre el thread dump de antes y el después?
+1) ¿Que diferencia vemos entre el thread dump de antes y el después?
 
-2. ¿Que indica la presencia del _DestroyJavaVM_ thread?
+2) ¿Que indica la presencia del _DestroyJavaVM_ thread?
 
-3. ¿Que sucede luego de configurar mi thread como daemon?
+3) ¿Que sucede luego de configurar mi thread como daemon?

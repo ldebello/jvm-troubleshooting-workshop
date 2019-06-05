@@ -25,4 +25,4 @@ jps -l
 
 == Preguntas
 
-1. ¿Que observamos de los Worker Thread?
+1) ¿Que observamos de los Worker Thread?

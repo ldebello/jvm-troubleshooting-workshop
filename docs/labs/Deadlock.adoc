@@ -1,6 +1,6 @@
 = Deadlock
 
-En este laboratorio veremos un deadlock que es detectado por la JVM.
+En este laboratorio veremos un deadlock muy simple.
 
 1) Abrir una terminal y ejecutar
 
@@ -32,12 +32,23 @@ jstack -l <PID>
 
 == Preguntas
 
-1. ¿Que threads están en deadlock?
+1) ¿Que threads están en deadlock?
 
 +++ <details><summary> +++
 See `answer`:
 +++ </summary><div> +++
 ----
-TransferTask-1 y TransferTask-2
+TransferTask-1 y TransferTask-2.
+----
++++ </div></details> +++
+
+2) ¿Que formas de evitar un deadlock tenemos?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+1. No utilizar locks.
+2. Obtener los locks siempre en el mismo orden (fixed order).
 ----
 +++ </div></details> +++

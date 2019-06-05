@@ -1,6 +1,6 @@
 = Circular Deadlock
 
-En este laboratorio veremos un circular deadlock o circular wait
+En este laboratorio veremos un circular deadlock o circular wait.
 
 1) Abrir una terminal y ejecutar
 
@@ -25,4 +25,13 @@ jstack -l <PID>
 
 == Preguntas
 
-1. ¿Cual es la forma de solucionar un circular wait?
+1) ¿Cual es la forma de solucionar un circular wait?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Podemos asignar un numero a cada recurso, y siempre que pidamos un recurso verificar que es mayor al actual.
+i.e: Thread 1 tiene el R5 pero necesita el R3, pero no puede obtenerlo ya que el recurso actual es mayor que el que necesita.
+----
++++ </div></details> +++
