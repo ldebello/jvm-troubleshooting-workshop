@@ -4,6 +4,8 @@
 ** Asignar memoria.
 ** Mantener los objetos vivos en la memoria.
 ** Reclamar el espacio usado por objetos no alcanzables.
+* Finalizers:
+** Los objetos que tiene el método finalize() son tratados de forma distinta por el GC, ya que primero son depositados en una queue en la cual el `Finalizer` thread va encargándose de llamar al finalize().
 * La memoria esta divida en dos areas Old Generation y Young Generation.
 * Premisas básicas:
 ** La mayoría de los objetos mueren jóvenes.

@@ -31,3 +31,36 @@ jstack -l <PID>
 ----
 ./tools/tda.sh
 ----
+
+== Preguntas
+
+1) ¿Como podemos explicar este deadlock?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+El Thread-1 esta esperando para obtener un WriteLock, pero debe esperar que todos los lectores hayan terminado.
+----
++++ </div></details> +++
+
+2) ¿Por que el read lock no se visualiza en `Locked ownable synchronizers`?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Aqui se muestran los locks que son retenidos por el thread de forma exclusiva. Esto genera
+que los WriteLock se muestren pero los ReadLock no.
+----
++++ </div></details> +++
+
+3) ¿ReentrantReadWriteLock `Lock downgrading` vs `Lock upgrading`?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Si tenemos un WriteLock podemos obtener un ReadLock, pero no a la inversa, y debemos estar atentos a esta situacion ya que en ese caso no podriamos hacer ningun progreso.
+----
++++ </div></details> +++

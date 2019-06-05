@@ -49,6 +49,7 @@ See `answer`:
 +++ </summary><div> +++
 ----
 1. No utilizar locks.
-2. Obtener los locks siempre en el mismo orden (fixed order).
+2. No utilizar locks nesteados.
+3. Si utilizamos locks nesteados, siempre debe ser en el mismo orden (fixed order).
 ----
 +++ </div></details> +++
