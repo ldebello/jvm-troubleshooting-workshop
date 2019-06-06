@@ -15,25 +15,47 @@ Esperar a que termine el proceso y ver los valores `"Total number of requests"` 
 
 [source,bash]
 ----
-./run.sh -t 15 -p -l latency
+./run.sh -t 15 -l latency -p
 ----
 
 3) Abrir el JFR con JMC
 
 == Preguntas
 
-1) ¿Qué clase/método utiliza locks?
+1) ¿Qué métodos están sincronizados?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+1. ConnectionFactory#getConnection
+2. Connection#executeQuery
+----
++++ </div></details> +++
 
 2) ¿Qué podríamos mejorar en nuestra aplicación?
 
-3) ¿Qué sucede luego del primer _fix_?
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Podemos intentar cambiar los metodos sincronizados, ya sea removiendo los "synchronized" o reduciendo el tiempo que tarda.
+Probemos reducir SHARED_RESOURCE_TIME de 200 a 20
+Probemos reducir QUERY_EXECUTION_TIME de 400 a 200
+----
++++ </div></details> +++
 
-4) ¿Qué sucede si decrementamos el _SHARED_RESOURCE_TIME_ de 200 a 20?
+3) ¿Que otras mejoras/pruebas podemos realizar?
 
-5) ¿Qué sucede si incrementados el _NUMBER_OF_THREADS_ de 10 a 20?
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Podemos hacer algunas pruebas para los siguientes casos:
 
-6) ¿Qué sucede si decrementamos el _NUMBER_OF_THREADS_ de 10 a 5?
-
-7) ¿Qué sucede si incrementados el _WORKER_THREADS_ de 2 a 4?
-
-8) ¿Qué sucede si decrementamos el _QUERY_EXECUTION_TIME_ de 400 a 200?
+1. Incrementar el valor de NUMBER_OF_THREADS de 10 a 20
+2. Decrementar el valor de NUMBER_OF_THREADS de 10 a 5
+3. Incrementar el valor de WORKER_THREADS de 2 a 4
+4. Decrementar el valor de QUERY_EXECUTION_TIME de 400 a 200
+----
++++ </div></details> +++
