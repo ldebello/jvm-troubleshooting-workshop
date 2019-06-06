@@ -1,6 +1,10 @@
 = Memory
 
 * Object Memory Layout
+* Volatile
+** Asegura que no suceda word-tearing (O sea operaciones atómicas para long/doubles en 32 bits).
+** Asegura que siempre un thread lee el ultimo valor escrito por otro sobre una variable.
+** Previene ciertos reordenamientos de operaciones en memoria.
 * Memory Usage: Heap + Non-Heap
 ** Non-Heap: MetaSpace + (Numbers of Threads x Stack Size) + Direct Buffers + Mapped Files (Libraries and Jars)
 * Memory Pools

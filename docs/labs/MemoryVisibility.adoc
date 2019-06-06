@@ -26,3 +26,22 @@ jps -l
 == Preguntas
 
 1) ¿Que observamos de los Worker Thread?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Vemos que se quedan esperando para que el valor del flag sea cambiado, y aunque nuestro codigo hace el cambio eso no parece visible.
+----
++++ </div></details> +++
+
+2) ¿Cual es la solución a nuestro problema?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Hay muchas formas de solucionar este problema, pero lo primero es entender que esta pasando. En este caso los worker thread no ven el cambio sobre el flag ya que el valor fue cacheado en un PC Register y en lugar de estar siendo leido desde Main memory siempre se lee el valor previo.
+La forma mas simple y menos costosa es marcar esa variable con el modificador volatile que nos asegura que un thread siempre ve el ultimo valor escrito.
+----
++++ </div></details> +++
