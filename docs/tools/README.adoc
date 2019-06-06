@@ -56,6 +56,7 @@ Además hay herramientas adicionales que pueden ser de utilidad.
 * https://builds.shipilev.net/jmc/[JMC]: Similar a VisualVM pero además posee JFR (Java Flight Recorder).
 * https://www.eclipse.org/mat/downloads.php[Memory Analyzer Thread]: Un Heap Analyzer, `link:MemoryAnalyzerThread.adoc[detalles]`.
 * https://fastthread.io/[Fast Thread]: Thread Dump Analyzer.
+* https://spotify.github.io/threaddump-analyzer/[Spotify Thread Dump Analyzer]: Thread Dump Analyzer.
 * https://github.com/irockel/tda[TDA]: Thread Dump Analyzer.
 * https://github.com/patric-r/jvmtop[JVMTop]: Command line interface similar a top para procesos Java.
 * https://gceasy.io/[GCEasy]: Universal GC Log Analyzer.

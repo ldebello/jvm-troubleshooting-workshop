@@ -34,6 +34,30 @@ jstack -l <PID> > thread_dump_after.jstack
 
 1) ¿Que diferencia vemos entre el thread dump de antes y el después?
 
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Vemos la presencia de un nuevo thread "DestroyJavaVM"
+----
++++ </div></details> +++
+
 2) ¿Que indica la presencia del _DestroyJavaVM_ thread?
 
-3) ¿Que sucede luego de configurar mi thread como daemon?
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Estoy indica que el thread main ha finalizado, y esta esperando que todos los thread non-daemon terminen.
+----
++++ </div></details> +++
+
+3) ¿Que sucede luego de configurar nuestro worker thread como daemon?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Luego de marcar nuestro worker thread como daemon, nos chocamos con un deadlock ya que estamos invocando System.exit() desde un shutdown hook (https://bugs.openjdk.java.net/browse/JDK-8216951)
+----
++++ </div></details> +++

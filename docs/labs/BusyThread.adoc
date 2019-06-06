@@ -22,3 +22,18 @@ jps -l
 ----
 ./tools/jvmtop.sh -p <PID>
 ----
+
+
+== Preguntas
+
+1) ¿Cual es la diferencia entre id, tid y nid?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+1. id: Es el id que le asigna Java al thread.
+2. tid: Es el address de ese native thread.
+3. nid: Es el id del native thread.
+----
++++ </div></details> +++
