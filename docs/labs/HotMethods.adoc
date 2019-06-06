@@ -31,7 +31,7 @@ jcmd <PID> JFR.start settings=profile
 
 [source,bash]
 ----
-jcmd <PID> JFR.dump name=<RECORDING_ID> filename=<RECORDING_FILE_PATH>
+jcmd <PID> JFR.dump name=<RECORDING_ID> filename=<RECORDING_FILE_PATH>.jfr
 ----
 
 5) Detenemos la grabación
@@ -40,6 +40,10 @@ jcmd <PID> JFR.dump name=<RECORDING_ID> filename=<RECORDING_FILE_PATH>
 ----
 jcmd <PID> JFR.stop name=<RECORDING_ID>
 ----
+
+6) Abrir el jfr en Java Mission Control
+
+Podemos utilizar el tab `Java Application` y ver el stack de nuestros threads o `Method Profiling` que nos brinda mas información.
 
 == Opcional
 
@@ -68,4 +72,21 @@ jcmd <PID> JFR.check
 
 1) ¿Qué clase/método está consumiendo más recursos?
 
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Luego de ver los hot methods y el stack trace vemos algunas clases de la JVM y ahi vemos que clase de nuestro codigo esta siendo invocado. En este caso NumberGenerator#countIntersection
+----
++++ </div></details> +++
+
 2) ¿Qué podríamos mejorar nuestra aplicación?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Muchas optimizaciones o mejoran van de la mano de la logica de la aplicacion, en este caso especifico podemos utilizar un Set en lugar de LinkedList.
+----
++++ </div></details> +++
+
