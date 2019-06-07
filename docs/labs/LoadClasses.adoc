@@ -16,3 +16,11 @@ Ir al tab _Memory_ y ver el chart de `Metaspace`, dejar ejecutando el programa a
 == Preguntas
 
 1) ¿Que patron de uso de memoria vemos?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+El patron que vemos se llama "sawtooth"
+----
++++ </div></details> +++
