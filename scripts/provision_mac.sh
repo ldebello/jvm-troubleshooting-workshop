@@ -14,7 +14,7 @@ J_ENV='jenv'
 JVM_TOP='jvmtop'
 FILE_LEAK_DETECTOR='file_leak_detector'
 
-JMC_VERSION=b107
+JMC_VERSION=b123
 
 # Colors
 red=$(tput setaf 1)
@@ -32,19 +32,12 @@ function confirmation_request() {
 }
 
 function install_with_brew_cask() {
-  if check_installed_with_brew_cask $1; then
-    return
-  else
-    printInstalling $1
-    brew cask install $1
-  fi
-}
-
-function check_installed_with_brew_cask() {
   if [[ `brew cask ls --versions $1` ]]; then
     printAlreadyInstalled $1
   else
     printNotInstalled $1
+    printInstalling $1
+    brew cask install $1
   fi
 }
 
@@ -54,19 +47,12 @@ function uninstall_with_brew_cask() {
 }
 
 function install_with_brew() {
-  if check_installed_with_brew $1; then
-    return
-  else
-    printInstalling $1
-    brew install $1
-  fi
-}
-
-function check_installed_with_brew() {
   if [[ `brew ls --versions $1` ]]; then
     printAlreadyInstalled $1
   else
     printNotInstalled $1
+    printInstalling $1
+    brew install $1
   fi
 }
 
