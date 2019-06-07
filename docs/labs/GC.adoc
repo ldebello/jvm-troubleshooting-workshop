@@ -2,6 +2,8 @@
 
 En este laboratorio veremos como obtener información sobre el garbage collector en nuestro proceso Java.
 
+*_Para ejecutar jcmd en este laboratorio vamos a necesitar Oracle JDK 8 o Open JDK 11_*
+
 1) Abrir una terminal y ejecutar
 
 [source,bash]
@@ -11,27 +13,53 @@ En este laboratorio veremos como obtener información sobre el garbage collector
 
 2) Iniciar JMC e iniciar una grabación de 1 minuto.
 
-3) Ir al tab _Garbage Collections_, aquí podremos ver la `cause` por la cual el GC fue invocado.
-
-4) Ir al tab _Memory_, aquí podremos ver que tipo de objetos están siendo alocados.
-
-5) Ir al tab _TLAB Allocations_, aquí podremos ver por thread cuantas allocations estamos haciendo.
-
-6) Ejecutar GCViewer y abrir nuestro GC log.
+3) Ejecutar GCViewer y abrir nuestro GC log.
 
 [source,bash]
 ----
 ./tools/gc_viewer.sh
 ----
 
-7) Ir a https://gceasy.io/index.jsp[GCEasy] y subir el log del GC.
+4) Ir a https://gceasy.io/index.jsp[GCEasy] y subir el log del GC.
 
 == Preguntas
 
-1) ¿Que tipo de allocations vemos?
+1) ¿Cual es la causa de las ejecuciones del GC?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+La causa mas comun en este ejemlo es "Allocation Failure". Esto se puede ver en el tab "Garbage Collection". Para ver las allocation que estan realizando los threads podemos ir al tab "TLAB Allocations".
+----
++++ </div></details> +++
 
 2) ¿Qué clases se instancian más? ¿Donde? ¿Por qué?
 
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+La clase mas instanciada es Integer. Esto lo podemos ver en el tab "Memory". Esto en parte se debe al autoboxing.
+----
++++ </div></details> +++
+
 3) ¿Como podemos arreglar nuestro programa sin modificar la idea del programa?
 
-4) ¿Que Throughput tenemos?
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Podemos utilizar Integer en lugar de int en la clase MapContent.
+----
++++ </div></details> +++
+
+4) ¿Que indica el Throughput del GC?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Indica la cantidad de tiempo en % que gasto la JVM.
+----
++++ </div></details> +++

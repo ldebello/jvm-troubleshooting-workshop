@@ -153,7 +153,7 @@ function main() {
   fi
 
   if [[ ! -z "$GC_DETAILS" ]]; then
-    JVM_OPTIONS+="-XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:./tools/gc_${LAB_NAME}.log -Xlog:gc*:file=./tools/gc_${LAB_NAME}.log "
+    JVM_OPTIONS+="-XX:+PrintGCDetails -Xloggc:./tools/gc_${LAB_NAME}.log -Xlog:gc*:file=./tools/gc_${LAB_NAME}.log "
   fi
 
   if [[ ! -z "$NATIVE_MEMORY_INFO" ]]; then

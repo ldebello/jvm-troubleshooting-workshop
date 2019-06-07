@@ -14,8 +14,8 @@ public class Main {
     public static void main(String[] args) {
         Utils.start(args);
 
-        Thread worker1 = new Thread(() -> lockReadFlat());
-        Thread worker2 = new Thread(() -> lockFlatWrite());
+        Thread worker1 = new Thread(Main::lockReadFlat);
+        Thread worker2 = new Thread(Main::lockFlatWrite);
 
         worker1.start();
         worker2.start();
