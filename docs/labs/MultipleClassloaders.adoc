@@ -1,6 +1,6 @@
 = Multiple Class loaders
 
-En este laboratorio veremos un ClassCastException no tan común.
+En este laboratorio veremos como verificar si una clase fue cargada por mas de un classloader.
 
 1) Abrir una terminal y ejecutar
 
@@ -13,18 +13,41 @@ En este laboratorio veremos un ClassCastException no tan común.
 
 3) Luego Abrir el `Heap Dump` con MAT (Memory Analyzer Thread).
 
-[source,bash]
+== Preguntas
+
+1) ¿Cuantas instancias de objetos DataObject tenemos?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
 ----
-# Histogram -> Option Group by class loader
+Tenemos 31 instancias
+1 Instancia cargada por el Application classloader
+5 Instancias cargada por el classloader A
+10 Instancias cargada por el classloader B
+15 Instancias cargada por el classloader C
 
-# Action -> Duplicate Classes
+Para obtener esta informacion podemos utilizar la siguiente query OQL
 
-# OQL Query: List objects
 SELECT * FROM ar.com.javacuriosities.labs.multiple_classloaders.DataObject
-
-# OQL Query: List classes
-SELECT * FROM OBJECTS ar.com.javacuriosities.labs.multiple_classloaders.DataObject
 ----
++++ </div></details> +++
 
+2) ¿Cuantas instancias de clase DataObject tenemos?
 
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Tenemos 4 instancias de la clase, una por cada classloader.
 
+Para obtener esta informacion podemos utilizar la siguiente query OQL
+
+SELECT * FROM OBJECTS ar.com.javacuriosities.labs.multiple_classloaders.DataObject
+
+Ademas podemos ver la misma informacion desd:
+
+# Histogram -> Option Group by class loader
+# Action -> Duplicate Classes
+----
++++ </div></details> +++
