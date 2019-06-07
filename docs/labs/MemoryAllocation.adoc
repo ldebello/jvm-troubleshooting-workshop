@@ -11,38 +11,55 @@ En este laboratorio veremos como analizar el uso de memoria.
 
 2) Abrir JMC, buscar el proceso Java y conectar la consola JMX.
 
-3) Seleccionar el tab _Memory_ y verificar que areas están creciendo.
+3) Probar las siguientes herramientas para ver el consumo de memoria:
 
-4) Seleccionar el tab _Threads_ y hacer click en el checkbox _Allocation_ para ver que Thread esta alocando mas memoria.
-
-5) A la hora de diagnosticar el correcto uso de memoria podemos usar multiples herramientas como `Histogramas`, `JFR`, `Heap Dumps`, `Old Object Sample (JDK 10+)`.
-
-5.1) Histogramas
+3.1) Histogramas
 
 [source,bash]
 ----
 ./scripts/get_class_histograms.sh -p <PID> -c 6 -w 10 -o memory_allocation
 ----
 
-5.2) JFR y Old Object Sample
+3.2) JFR y Old Object Sample
 
 [source,bash]
 ----
 ./run.sh -t 60 -l memory_allocation -p
 ----
 
-5.3)
+3.3)
 
-[source,bash]
-----
-./run.sh -l memory_allocation
-----
-
-Abrir el proceso con VisualVM y en el tab _Monitor_ opción `Heap Dump`
-
+Abrir el proceso con VisualVM y en el tab _Monitor_ opción `Heap Dump`.
 Luego Abrir el `Heap Dump` con MAT (Memory Analyzer Thread).
-
 
 == Preguntas
 
-1) ¿Qué clases se instancian más? ¿Donde? ¿Por qué?
+1) ¿Qué area de memoria es la que mas crece?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+El area que mas crece es la Old Generacion. Esto lo podemos ver en el tab "Memory".
+----
++++ </div></details> +++
+
+2) ¿Cual es el Thread que mas memoria esta alocando?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+El thread main. Esto lo podemos ver en el tab "Threads" y hacer click en el checkbox "Allocation".
+----
++++ </div></details> +++
+
+3) ¿Qué clases se instancian más? ¿Donde? ¿Por qué?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Por cualquier metodo ya sea el histograma, o el old object sample y el heap dump, podremos ver que hay muchas instancias de Entity. Estamos guardando esta clase en una Collection pero no hicimos override del equals y hashcode
+----
++++ </div></details> +++
