@@ -10,3 +10,25 @@ En este laboratorio veremos como identificar los recursos que no estamos liberan
 ----
 
 2) Abrir un browser y navegar a `http://localhost:9876/`
+
+== Preguntas
+
+1) ¿Cuales archivos no fueron cerrados?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+FirstBook.txt, SecondBook.txt, ThirdBook.txt
+----
++++ </div></details> +++
+
+2) ¿Que podemos usar para evitar este tipo de problemas?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+try-with-resources
+----
++++ </div></details> +++

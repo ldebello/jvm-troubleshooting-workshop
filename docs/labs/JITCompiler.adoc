@@ -20,8 +20,40 @@ En este laboratorio veremos algunas optimizaciones realizadas por el JIT Compile
 
 1) ¿Qué compilaciones vemos?
 
-2) ¿Cual es el tiempo de compilación?
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+bigMethod(Days), deadCode(), lockElision().
+----
++++ </div></details> +++
+
+2) ¿Que método no sera inlined?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+bigMethod(Days)
+----
++++ </div></details> +++
 
 3) ¿Cual es el `Largest Bytecode Methods`?
 
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+bigMethod(Days), por esta razon no sera inlined.
+----
++++ </div></details> +++
+
 4) ¿Cual es el estado de la `Code Cache`?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Desde el boton "Cache" podremos ver que hay espacio suficiente.
+----
++++ </div></details> +++

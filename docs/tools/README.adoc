@@ -64,6 +64,7 @@ Además hay herramientas adicionales que pueden ser de utilidad.
 * https://github.com/chewiebug/GCViewer[GCViewer]: GC Logs Parser.
 * https://github.com/dmart28/gcplot-docker[GCPlot]: GC Log Analyzer.
 * https://github.com/AdoptOpenJDK/jitwatch[JIT Watch]: Permite analizar los logs del JIT Compiler.
+* https://github.com/ingokegel/jclasslib[jclasslib]: Bytecode viewer.
 * http://file-leak-detector.kohsuke.org/[File Leak Detector]: Java Agent que mantiene el tracking de donde/cuando/quien abrió un archivo en la JVM.
 
 == Plugins

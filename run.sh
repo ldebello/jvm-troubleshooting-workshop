@@ -161,7 +161,7 @@ function main() {
   fi
 
   if [[ ! -z "$JIT_COMPILER_INFO" ]]; then
-    JVM_OPTIONS+="-XX:+PrintAssembly -XX:+PrintCompilation -XX:+LogCompilation -XX:+PrintInlining -XX:CompileOnly=ar/com/javacuriosities/labs/$LAB_NAME "
+    JVM_OPTIONS+="-XX:+PrintAssembly -XX:+PrintCompilation -XX:+LogCompilation -XX:+PrintInlining -XX:CompileOnly=ar/com/javacuriosities/labs/$LAB_NAME -XX:LogFile=./tools/compilation_${LAB_NAME}.xml "
   fi
 
   MAIN_CLASS="ar.com.javacuriosities.labs.$LAB_NAME.Main"
