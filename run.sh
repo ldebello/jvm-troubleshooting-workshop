@@ -125,8 +125,7 @@ function main() {
   fi
 
   if [[ ! -z "$SAFEPOINT_INFO" ]]; then
-    # JVM_OPTIONS+="-XX:+PrintGCApplicationStoppedTime -XX:+PrintGCApplicationConcurrentTime "
-    # JVM_OPTIONS+="-XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDetails "
+    JVM_OPTIONS+="-XX:+PrintGCApplicationStoppedTime -XX:+PrintGCApplicationConcurrentTime "
     JVM_OPTIONS+="-XX:+PrintSafepointStatistics -XX:PrintSafepointStatisticsCount=1 "
     # JVM_OPTIONS+="-XX:-UseBiasedLocking "
     # JVM_OPTIONS+="-XX:+UseCountedLoopSafepoints "

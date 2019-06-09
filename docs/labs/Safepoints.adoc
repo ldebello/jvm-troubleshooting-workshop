@@ -9,4 +9,14 @@ En este laboratorio veremos como los safepoints pueden impactar en nuestro proce
 ./run.sh -s -l safepoints
 ----
 
-2) Observamos el output del tiempo consumido para que los threads lleguen a un safepoint.
+== Preguntas
+
+1) ¿Qué impacto puede tener que un thread tarde en llegar a un safepoint?
+
++++ <details><summary> +++
+See `answer`:
++++ </summary><div> +++
+----
+Que nuestra aplicacion podria quedar unresponsive ya que los demas estan esperando al thread que falta.
+----
++++ </div></details> +++
