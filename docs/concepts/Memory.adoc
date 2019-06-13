@@ -52,3 +52,5 @@
 image::../images/Memory.png[]
 
 image::../images/MemoryIssues.png[]
+
+* http://es.slideshare.net/luisdebello/administracin-de-memoria-en-java[Java Memory Management]
