@@ -1,0 +1,12 @@
+= OOM
+
+En este laboratorio veremos como generar un Heap Dump cuando sucede un OOM.
+
+1) Abrir una terminal y ejecutar
+
+[source,bash]
+----
+./run.sh -l out_of_memory -e "-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/heapdump.hprof -Xmx60m"
+----
+
+2) Cuando el programa finaliza obtendremos el Heap Dump en "/tmp/heapdump.hprof"

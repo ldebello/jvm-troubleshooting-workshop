@@ -10,6 +10,7 @@ function usage() {
   echo "  -l name       Lab name"
   echo "  -p [seconds]  Profile (Default ${DEFAULT_PROFILER_DURATION}s)"
   echo "  -g            GC Details"
+  echo "  -e            Extra parameters"
   echo "  -j            Turn on JIT logs"
   echo "  -d            Heap Dump on OOM"
   echo "  -m            Maximum Metaspace"
@@ -26,7 +27,7 @@ function usage() {
 }
 
 function main() {
-  while getopts ":l:t:p:m: hrdszncofgj" opt
+  while getopts ":l:t:p:m:e: hrdszncofgje" opt
   do
     case $opt in
     h )
@@ -78,6 +79,9 @@ function main() {
       ;;
     l )
       LAB_NAME=$OPTARG
+      ;;
+    e )
+      EXTRA=$OPTARG
       ;;
     \? )
       echo "Invalid option -$OPTARG"
@@ -165,7 +169,7 @@ function main() {
 
   MAIN_CLASS="ar.com.javacuriosities.labs.$LAB_NAME.Main"
 
-  java ${JVM_OPTIONS} -cp target/${JAR} ${MAIN_CLASS} "$@"
+  java ${JVM_OPTIONS} ${EXTRA} -cp target/${JAR} ${MAIN_CLASS} "$@"
 }
 
 main "$@"
